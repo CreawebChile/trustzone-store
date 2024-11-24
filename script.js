@@ -1,39 +1,20 @@
-// Toggle Navbar Menu in Mobile View
-function toggleMenu() {
-    const navMenu = document.querySelector('.navbar ul');
-    navMenu.classList.toggle('active');
+// Generar copos de nieve
+function crearCopoDeNieve() {
+    const snowflake = document.createElement('div');
+    snowflake.className = 'snowflake';
+    snowflake.textContent = '❄'; // Puedes usar otros símbolos como "✦" o "❅"
+    snowflake.style.left = Math.random() * window.innerWidth + 'px'; // Posición inicial aleatoria
+    snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Duración de caída aleatoria
+    snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px'; // Tamaño aleatorio del copo
+    snowflake.style.opacity = Math.random(); // Transparencia aleatoria
+
+    document.body.appendChild(snowflake);
+
+    // Eliminar el copo después de la animación para evitar acumulación
+    setTimeout(() => {
+        snowflake.remove();
+    }, 5000); // Tiempo coincide con la duración máxima de la animación
 }
 
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Form submission handling
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
-    this.reset();
-});
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    fetch(this.action, {
-        method: this.method,
-        body: new FormData(this),
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            this.reset();
-            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
-        } else {
-            alert('Hubo un problema al enviar el mensaje. Inténtalo más tarde.');
-        }
-    });
-});
+// Crear copos de nieve cada 200ms
+setInterval(crearCopoDeNieve, 200);
