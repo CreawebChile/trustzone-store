@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustZone Store</title>
+    
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        main {
+            flex: 1;
+            padding-top: 140px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333333;
+            color: white;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: auto;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .navbar nav ul li a:hover {
+            color: #ff9800;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #fff;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .navbar nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                width: 100%;
+                padding: 20px;
+                gap: 10px;
+                border-top: 2px solid #ff9800;
+                z-index: 99;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .navbar nav ul.active {
+                display: flex;
+            }
+        }
+        .menu-icon.active i {
+            transform: rotate(90deg);
+            transition: transform 0.3s ease;
+        }
+        .search-bar {
+            margin: 20px auto;
+            display: flex;
+            gap: 10px;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+        .search-bar input, .search-bar select {
+            padding: 10px;
+            font-size: 14px;
+            width: 100%;
+            max-width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .product-details {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        .product-price {
+            color: #ff5722;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .buy-button {
+            display: inline-block;
+            background-color: #25d366;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: auto;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <img src="images/Logotipo%20Tecnolog%C3%ADa%20Azul%20(2).png" alt="Logo de TrustZone">
+                TrustZone Store
+            </a>
+            <nav>
+                <ul class="hidden" id="nav-menu">
+                    <li><a href="index.html#home">Inicio</a></li>
+                    <li><a href="index.html#about">Sobre Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="index.html#contact">Contacto</a></li>
+                    <li><a href="Terminos-y-condiciones.html">Términos y Condiciones</a></li>
+                </ul>
+            </nav>
+            <div class="menu-icon" onclick="toggleMenu()" aria-expanded="false"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Buscar productos...">
+            <select id="filter-category">
+                <option value="">Todas las Categorías</option>
+                <option value="productividad">Productividad</option>
+                <option value="diseño">Diseño</option>
+                <option value="redes">Redes Sociales</option>
+                <option value="seguridad">Seguridad</option>
+                <option value="musica">Música</option>
+                <option value="streaming">Streaming</option>
+                <option value="vpn">VPN</option>
+                <option value="gaming">Gaming</option>
+            </select>
+            <select id="filter-price">
+                <option value="">Todos los Precios</option>
+                <option value="low">Menor Precio</option>
+                <option value="high">Mayor Precio</option>
+            </select>
+            <select id="filter-best-sellers">
+                <option value="">Ordenar por</option>
+                <option value="best">Más Vendidos</option>
+            </select>
+        </div>
+
+        <div class="product-grid" id="product-grid">
+            <!-- Aquí están los 14 productos -->
+            <div class="product-card" data-category="productividad" data-price="4990" data-best-seller="true" data-description="Accede a ChatGPT durante un mes con una cuenta compartida. ¡Oferta limitada!">
+                <div class="product-image" style="background-image: url('images/chatgpt.jpg');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">ChatGPT 1 mes (cuenta compartida)</h3>
+                    <p class="product-price">$4.990 CLP</p>
+                    <a href="https://wa.me/56982195919" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="diseño" data-price="2990" data-best-seller="true" data-description="Acceso garantizado a Canva Pro por un año, ¡y la posibilidad de mantenerlo para siempre! Nota: El acceso de por vida está sujeto a disponibilidad y demanda.">
+                <div class="product-image" style="background-image: url('images/canvapro.jpg');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Canva Pro 1 año/para siempre</h3>
+                    <p class="product-price">$5.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Canva%20Pro%201%20año" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="streaming" data-price="3990" data-best-seller="true" data-description="Disfruta de Amazon Prime Video y Amazon Music por un mes completo. Acceso a películas, series, música y más.">
+                <div class="product-image" style="background-image: url('images/prime video.png');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Amazon Prime Video + Amazon Music 1 mes</h3>
+                    <p class="product-price">$3.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Amazon%20Prime%20Video%20y%20Amazon%20Music" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="false" data-description="Aumenta tu presencia en Instagram con 1.000 seguidores.">
+                <div class="product-image" style="background-image: url('images/seguidores instagram.png');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Seguidores de Instagram (1.000 seguidores)</h3>
+                    <p class="product-price">$9.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20los%20Seguidores%20de%20Instagram" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="false" data-description="Incrementa tu popularidad en TikTok con 1.000 seguidores.">
+                <div class="product-image" style="background-image: url('images/seguidores-tiktok.webp');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Seguidores de TikTok (1.000 seguidores)</h3>
+                    <p class="product-price">$9.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20los%20Seguidores%20de%20TikTok" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="seguridad" data-price="5500" data-best-seller="false" data-description="Protección contra malware y virus durante un año con McAfee.">
+                <div class="product-image" style="background-image: url('images/Packshot_AntiVirusPlus.webp');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">McAfee AntiVirus (2024) - 1 Año</h3>
+                    <p class="product-price">$5.500 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20McAfee%20AntiVirus%202024" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="productividad" data-price="5500" data-best-seller="false" data-description="Suite completa de Office 365 por un año, incluye Word, Excel, y más.">
+                <div class="product-image" style="background-image: url('images/microsftOffice.png');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Microsoft Office 365 Personal por 1 año</h3>
+                    <p class="product-price">$5.500 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Office%20365%20Personal%201%20año" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="seguridad" data-price="3990" data-best-seller="false" data-description="Express VPN para 5 dispositivos durante 1 mes, puedes usarlo para cambiar tu ubicación y acceder a contenido de otros países en Netflix u otras plataformas.">
+                <div class="product-image" style="background-image: url('images/expressvpn.jpg');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Express VPN 1 mes</h3>
+                    <p class="product-price">$3.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Express%20VPN%201%20mes" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="gaming" data-price="9990" data-best-seller="false" data-description="Control de retroceso del mouse. No es baneable, ya que no interfiere con los archivos del juego. Ideal para juegos de disparos.">
+                <div class="product-image" style="background-image: url('images/Antirecoil.jpg');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Anti Recoil para Mouse</h3>
+                    <p class="product-price">$9.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Anti%20Recoil%20para%20Mouse" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="gaming" data-price="9990" data-best-seller="false" data-description="Esta macro alza mira en juegos como Free Fire en PC, mejorando la precisión en el juego.">
+                <div class="product-image" style="background-image: url('images/macromouse.jpg');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Macro para Mouse</h3>
+                    <p class="product-price">$9.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Macro%20para%20Mouse" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="oferta" data-price="7500" data-best-seller="true" data-description="Obtén McAfee AntiVirus (2024) y Canva Pro (1 año) en un solo paquete.">
+                <div class="product-image" style="background-image: url('images/Promo-canva+mcafee.png');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Oferta McAfee y Canva</h3>
+                    <p class="product-price">$7.500 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20la%20Oferta%20McAfee%20y%20Canva" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="streaming" data-price="3990" data-best-seller="false" data-description="Disfruta de YouTube sin anuncios y accede a YouTube Music con este plan de 1 mes.">
+                <div class="product-image" style="background-image: url('images/youtubepremium.jpg');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">YouTube Premium + YouTube Music 1 mes</h3>
+                    <p class="product-price">$3.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20YouTube%20Premium%20y%20YouTube%20Music%20por%201%20mes" class="buy-button">Comprar</a>
+                </div>
+            </div>
+            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="false" data-description="Obtén 1000 seguidores para tu canal de Twitch. Entrega rápida en 24 a 48 horas.">
+                <div class="product-image" style="background-image: url('images/seguidorestwitch.jpg');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">1000 Seguidores de Twitch</h3>
+                    <p class="product-price">$9.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%201000%20Seguidores%20de%20Twitch" class="buy-button">Comprar</a>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+        <!-- Modal -->
+        <div id="product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <p>Gracias por confiar en nosotros para todas tus necesidades digitales.</p>
+        <p>&copy; 2024 <strong>TrustZone Store</strong>. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('search');
+            const categoryFilter = document.getElementById('filter-category');
+            const priceFilter = document.getElementById('filter-price');
+            const bestSellerFilter = document.getElementById('filter-best-sellers');
+            const productGrid = document.getElementById('product-grid');
+            const products = Array.from(document.querySelectorAll('.product-card'));
+            const modal = document.getElementById('product-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const closeModal = document.querySelector('.close');
+
+            function filterProducts() {
+                const searchText = searchInput.value.toLowerCase();
+                const category = categoryFilter.value;
+                const price = priceFilter.value;
+                const bestSeller = bestSellerFilter.value;
+
+                let filteredProducts = products.filter(product => {
+                    let matchesSearch = product.querySelector('.product-title').textContent.toLowerCase().includes(searchText);
+                    let matchesCategory = !category || product.dataset.category === category;
+                    let matchesPrice = true;
+                    if (price === 'low') matchesPrice = parseFloat(product.dataset.price) <= 5000;
+                    if (price === 'high') matchesPrice = parseFloat(product.dataset.price) > 5000;
+                    let matchesBestSeller = !bestSeller || (bestSeller === 'best' && product.dataset.bestSeller === 'true');
+                    return matchesSearch && matchesCategory && matchesPrice && matchesBestSeller;
+                });
+
+                productGrid.innerHTML = '';
+                filteredProducts.forEach(product => productGrid.appendChild(product));
+            }
+
+            searchInput.addEventListener('input', filterProducts);
+            categoryFilter.addEventListener('change', filterProducts);
+            priceFilter.addEventListener('change', filterProducts);
+            bestSellerFilter.addEventListener('change', filterProducts);
+
+            productGrid.addEventListener('click', function (e) {
+                const card = e.target.closest('.product-card');
+                if (card) {
+                    modalTitle.textContent = card.querySelector('.product-title').textContent;
+                    modalDescription.textContent = card.dataset.description;
+                    modal.style.display = 'block';
+                }
+            });
+
+            closeModal.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

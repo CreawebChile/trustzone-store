@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TrustZone Store - Bienvenido a tu tienda de confianza para productos de alta calidad.">
+    <title>TrustZone Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8em;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            background: url('images/www.trustzonestore.com (2).png') center center/cover no-repeat;
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background-color: #ff9800;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .welcome-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .welcome-section p, .welcome-section ul li {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .welcome-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .welcome-section ul li {
+            margin: 10px 0;
+        }
+
+        /* About and Contact Sections */
+        .about-section, .contact-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .about-section h2, .contact-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .about-section p, .contact-section p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        /* Payment Methods Section */
+        .payment-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .payment-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .payment-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* Contact Section */
+        .contact-section form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section form label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .contact-section form .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-section input, .contact-section textarea {
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-section input:focus, .contact-section textarea:focus {
+            border-color: #ff9800;
+        }
+
+        .contact-section button {
+            background-color: #ff9800;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-section button:hover {
+            background-color: #e68900;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 40px;
+        }
+
+        .footer-contact {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .footer-contact a {
+            color: #ff9800;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #e68900;
+        }
+
+        .footer-icons {
+            margin-top: 15px;
+        }
+
+        .footer-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-icons a:hover {
+            color: #ff9800;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .navbar nav.active ul {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+                color: #fff;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <img src="images/Logotipo Tecnología Azul (2).png" alt="Logo de TrustZone">
+                TrustZone Store
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="Terminos-y-condiciones.html">Términos y Condiciones</a></li>
+                </ul>
+            </nav>
+            <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Bienvenido a TrustZone Store</h1>
+            <p>Tu tienda de confianza para productos de alta calidad.</p>
+            <a href="productos.html" class="cta-button">Explora nuestros productos</a>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+<section class="welcome-section">
+    <h2>Bienvenido a TrustZone Store</h2>
+    <p>Si estás cansado de pagar precios elevados por tus herramientas digitales favoritas, en <strong>TrustZone Store</strong> te ofrecemos acceso a los mismos servicios premium que necesitas, pero a precios accesibles. Olvídate de las suscripciones costosas y descubre una forma inteligente de obtener tus herramientas digitales.</p>
+    <p>Compra sin complicaciones y recibe soporte completo a través de WhatsApp. Tu seguridad y satisfacción son nuestra prioridad.</p>
+    <h3>Productos Digitales a Precios Imbatibles</h3>
+    <ul>
+        <li><strong>Canva Pro</strong> por 1 año - Diseña sin límites con todas las funciones premium.</li>
+        <li><strong>ChatGPT Plus</strong> - Lleva tus conversaciones y productividad al siguiente nivel.</li>
+        <li><strong>McAfee</strong> por 1 año - Seguridad total para tus dispositivos.</li>
+        <li><strong>Seguidores de Instagram</strong> y <strong>TikTok</strong> - Aumenta tu audiencia y visibilidad.</li>
+        <li><strong>ExpressVPN</strong> - Navega de manera segura y sin restricciones en todo el mundo.</li>
+        <li>Y muchos productos más esperándote.</li>
+    </ul>
+    <p><strong>Calidad garantizada y soporte 24/7</strong> para que disfrutes de una experiencia sin igual.</p>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>Sobre Nosotros</h2>
+            <p>TrustZone Store es mucho más que una tienda en línea. Surgimos como un proyecto universitario con la visión de proporcionar herramientas digitales de alta calidad a precios accesibles, especialmente para estudiantes. Desde nuestros inicios, hemos estado comprometidos con ofrecer una experiencia de compra segura y confiable, con un enfoque en las necesidades reales de la comunidad académica. Nuestro objetivo es potenciar el desarrollo académico y profesional de nuestros usuarios, garantizando siempre altos estándares de calidad y un excelente servicio al cliente.</p>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section class="payment-section">
+        <h2>¿Por Qué Mercado Pago y PayPal?</h2>
+        <p>Utilizamos Mercado Pago para brindar la máxima seguridad en tus transacciones nacionales. Mercado Pago garantiza la protección de tus datos y te ofrece un proceso de pago fácil y seguro. Para compras internacionales, aceptamos PayPal, el método más seguro y confiable a nivel mundial. PayPal te permite visualizar los precios en dólares (USD) y procesar tus pagos de manera rápida y segura, brindándote la tranquilidad de una transacción confiable. 🏡💳🌐</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contáctanos</h2>
+        <p>Si tienes alguna pregunta o necesitas más información, estaremos encantados de ayudarte. Completa el formulario a continuación y te responderemos lo antes posible.</p>
+        <form id="contact-form" action="https://formspree.io/f/mvgorjle" method="POST">
+            <div class="form-group">
+                <label for="name">Nombre Completo</label>
+                <input type="text" id="name" name="name" placeholder="Ingresa tu nombre completo" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" rows="5" required></textarea>
+            </div>
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 TrustZone Store. Todos los derechos reservados.</p>
+        <div class="footer-contact">
+            <p>📞 Contáctanos vía WhatsApp: <a href="https://wa.me/56982195919" target="_blank">+56 9 8219 5919</a></p>
+            <p>📸 Síguenos en Instagram: <a href="https://www.instagram.com/trustzone_store" target="_blank">@trustzone_store</a></p>
+        </div>
+        <div class="footer-icons">
+            <a href="https://wa.me/56982195919" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/trustzone_store" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
