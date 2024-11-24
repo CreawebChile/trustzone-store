@@ -46,7 +46,7 @@
             font-size: 1.5em;
             font-weight: bold;
             text-decoration: none;
-            color:#fff;
+            color: #fff;
         }
 
         .navbar .logo img {
@@ -79,6 +79,10 @@
         }
 
         @media screen and (max-width: 768px) {
+            .navbar {
+                padding-right: 20px;
+            }
+
             .navbar nav ul {
                 display: none;
                 flex-direction: column;
@@ -86,8 +90,9 @@
                 background-color: #333;
                 position: absolute;
                 top: 60px;
-                right: 20px;
-                width: 200px;
+                right: 10px; /* Ajustado para que no toque el borde de la pantalla */
+                width: calc(100% - 20px); /* Espacio lateral para evitar que el menú toque los bordes */
+                max-width: 300px;
                 padding: 15px;
                 border-radius: 5px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -99,6 +104,7 @@
 
             .menu-icon {
                 display: block;
+                margin-right: 10px; /* Espacio extra para evitar tocar el borde */
             }
         }
 

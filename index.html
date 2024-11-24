@@ -71,6 +71,7 @@
             display: none;
             font-size: 1.8em;
             cursor: pointer;
+            color: #fff;
         }
 
         /* Hero Section */
@@ -284,6 +285,10 @@
         }
 
         @media screen and (max-width: 768px) {
+            .navbar {
+                padding-right: 10px;
+            }
+
             .navbar nav ul {
                 display: none;
                 flex-direction: column;
@@ -291,10 +296,12 @@
                 background-color: #333;
                 position: absolute;
                 top: 60px;
-                right: 20px;
-                width: 200px;
-                padding: 10px;
+                right: 10px;
+                width: calc(100% - 20px);
+                max-width: 300px;
+                padding: 15px;
                 border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             }
 
             .navbar nav.active ul {
@@ -304,6 +311,7 @@
             .menu-icon {
                 display: block;
                 color: #fff;
+                margin-right: 10px;
             }
 
             .hero-section h1 {
@@ -364,29 +372,26 @@
     </section>
 
     <!-- Welcome Section -->
-<section class="welcome-section">
-    <h2>Bienvenido a TrustZone Store</h2>
-    <p>Si estás cansado de pagar precios elevados por tus herramientas digitales favoritas, en <strong>TrustZone Store</strong> te ofrecemos acceso a los mismos servicios premium que necesitas, pero a precios accesibles. Olvídate de las suscripciones costosas y descubre una forma inteligente de obtener tus herramientas digitales.</p>
-    <p>Compra sin complicaciones y recibe soporte completo a través de WhatsApp. Tu seguridad y satisfacción son nuestra prioridad.</p>
-    <h3>Productos Digitales a Precios Imbatibles</h3>
-    <ul>
-        <li><strong>Canva Pro</strong> por 1 año - Diseña sin límites con todas las funciones premium.</li>
-        <li><strong>ChatGPT Plus</strong> - Lleva tus conversaciones y productividad al siguiente nivel.</li>
-        <li><strong>McAfee</strong> por 1 año - Seguridad total para tus dispositivos.</li>
-        <li><strong>Seguidores de Instagram</strong> y <strong>TikTok</strong> - Aumenta tu audiencia y visibilidad.</li>
-        <li><strong>ExpressVPN</strong> - Navega de manera segura y sin restricciones en todo el mundo.</li>
-        <li>Y muchos productos más esperándote.</li>
-    </ul>
-    <p><strong>Calidad garantizada y soporte 24/7</strong> para que disfrutes de una experiencia sin igual.</p>
-</section>
-
+    <section class="welcome-section">
+        <h2>Bienvenido a TrustZone Store</h2>
+        <p>Si estás cansado de pagar precios elevados por tus herramientas digitales favoritas, en <strong>TrustZone Store</strong> te ofrecemos acceso a los mismos servicios premium que necesitas, pero a precios accesibles. Olvídate de las suscripciones costosas y descubre una forma inteligente de obtener tus herramientas digitales.</p>
+        <p>Compra sin complicaciones y recibe soporte completo a través de WhatsApp. Tu seguridad y satisfacción son nuestra prioridad.</p>
+        <h3>Productos Digitales a Precios Imbatibles</h3>
+        <ul>
+            <li><strong>Canva Pro</strong> por 1 año - Diseña sin límites con todas las funciones premium.</li>
+            <li><strong>ChatGPT Plus</strong> - Lleva tus conversaciones y productividad al siguiente nivel.</li>
+            <li><strong>McAfee</strong> por 1 año - Seguridad total para tus dispositivos.</li>
+            <li><strong>Seguidores de Instagram</strong> y <strong>TikTok</strong> - Aumenta tu audiencia y visibilidad.</li>
+            <li><strong>ExpressVPN</strong> - Navega de manera segura y sin restricciones en todo el mundo.</li>
+            <li>Y muchos productos más esperándote.</li>
+        </ul>
+        <p><strong>Calidad garantizada y soporte 24/7</strong> para que disfrutes de una experiencia sin igual.</p>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about-section">
-        <div class="about-content">
-            <h2>Sobre Nosotros</h2>
-            <p>TrustZone Store es mucho más que una tienda en línea. Surgimos como un proyecto universitario con la visión de proporcionar herramientas digitales de alta calidad a precios accesibles, especialmente para estudiantes. Desde nuestros inicios, hemos estado comprometidos con ofrecer una experiencia de compra segura y confiable, con un enfoque en las necesidades reales de la comunidad académica. Nuestro objetivo es potenciar el desarrollo académico y profesional de nuestros usuarios, garantizando siempre altos estándares de calidad y un excelente servicio al cliente.</p>
-        </div>
+        <h2>Sobre Nosotros</h2>
+        <p>TrustZone Store es mucho más que una tienda en línea. Surgimos como un proyecto universitario con la visión de proporcionar herramientas digitales de alta calidad a precios accesibles, especialmente para estudiantes. Desde nuestros inicios, hemos estado comprometidos con ofrecer una experiencia de compra segura y confiable, con un enfoque en las necesidades reales de la comunidad académica. Nuestro objetivo es potenciar el desarrollo académico y profesional de nuestros usuarios, garantizando siempre altos estándares de calidad y un excelente servicio al cliente.</p>
     </section>
 
     <!-- Payment Methods Section -->
