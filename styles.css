@@ -1,7 +1,8 @@
 /* ------------------------------
    Efecto de nieve
    ------------------------------ */
-   .snowflake {
+/*
+.snowflake {
     position: fixed;
     top: -50px;
     z-index: 9999;
@@ -20,3 +21,4 @@
     0%, 100% { transform: translateX(0); }
     50% { transform: translateX(50px); }
 }
+*/
