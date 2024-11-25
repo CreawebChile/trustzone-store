@@ -1,11 +1,16 @@
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1273212656995497"
-     crossorigin="anonymous"></script>
+<script>
+    // Verifica si el usuario está autorizado
+    if (!sessionStorage.getItem('verified')) {
+      alert('Debes verificar tu correo para acceder.');
+      window.location.href = 'verificacion.html'; // Redirige al formulario de verificación
+    }
+  </script>  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TrustZone Store - Welcome to your trusted store for high-quality digital products.">
+    <meta name="description" content="TrustZone Store - Bienvenido a tu tienda de confianza para productos de alta calidad.">
     <title>TrustZone Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +45,6 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding-right: 10px;
         }
 
         .navbar .logo {
@@ -79,10 +83,13 @@
             font-size: 1.8em;
             cursor: pointer;
             color: #fff;
-            margin-right: 10px; /* Asegurar que el ícono no toque el borde */
         }
 
         @media screen and (max-width: 768px) {
+            .navbar {
+                padding-right: 20px;
+            }
+
             .navbar nav ul {
                 display: none;
                 flex-direction: column;
@@ -104,6 +111,7 @@
 
             .menu-icon {
                 display: block;
+                margin-right: 10px; /* Espacio extra para evitar tocar el borde */
             }
         }
 
@@ -238,11 +246,11 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="productos.html">Products</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="Terminos-y-condiciones.html">Terms & Conditions</a></li>
+                    <li><a href="index.html#home">Inicio</a></li>
+                    <li><a href="index.html#about">Sobre Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="index.html#contact">Contacto</a></li>
+                    <li><a href="Terminos-y-condiciones.html">Términos y Condiciones</a></li>
                 </ul>
             </nav>
             <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
@@ -252,27 +260,40 @@
     <!-- Main Content -->
     <div class="container">
         <div class="header">
-            <h1>Canva Pro Link</h1>
+            <h1>Enlace Canva Pro</h1>
         </div>
 
-        <p class="instructions">Gain instant access to Canva Pro by joining our professional team using the link below. Once your subscription ends, return here to join the newly updated group. Ensure that you have uninterrupted access by regularly checking for updated links.</p>
+        <p class="instructions" style="line-height: 1.8; font-size: 1.2em; text-align: justify;">
+            <span style="color: #ff5722; font-weight: bold;">¡Accede a Canva Pro Gratis</span> uniéndote a nuestro equipo profesional! Usa el enlace a continuación para disfrutar de todas las funciones premium. 
+            <br><br>
+            <span style="color: #e64a19; font-weight: bold;">IMPORTANTE:</span> Los grupos no siempre se actualizan y puede que en algún momento el acceso no funcione. Para asegurarte acceso garantizado <span style="color: #1976d2; font-weight: bold;">sin interrupciones</span>, te recomendamos nuestra versión de pago por solo <span style="color: #388e3c; font-weight: bold;">$5.990 CLP al año completo</span>. 
+            <br><br>
+            Además, si utilizas el código <span style="color: #ff9800; font-weight: bold;">TRUSTZONESTORE</span>, obtendrás un <span style="color: #4caf50; font-weight: bold;">precio rebajado de $2.990 CLP</span>. 
+            <br><br>
+            Contáctanos aquí para más información o para obtener tu acceso garantizado con el código aplicado automáticamente:
+            <a href="https://api.whatsapp.com/send/?phone=56982195919&text=Hola%2C+estoy+interesado+en+Canva+Pro+1+a%C3%B1o+mi+c%C3%B3digo+es+TRUSTZONESTORE&type=phone_number&app_absent=0" style="color: #1976d2; font-weight: bold; text-decoration: underline;">Haz clic aquí para contactarnos por WhatsApp</a>
+<br><br>
+
+            <span style="color: #ff5722; font-weight: bold;">¡No dejes pasar esta oportunidad de disfrutar Canva Pro al mejor precio!</span>
+        </p>
+        
         
         <div class="canva-buttons">
-            <a href="https://www.canva.com/brand/join?token=n0zVZq_fEeiuaUjZPN5MuQ&referrer=team-invite" class="btn">Join Canva Pro Team</a>
+            <a href="https://www.canva.com/brand/join?token=n0zVZq_fEeiuaUjZPN5MuQ&referrer=team-invite" class="btn">Unirse al equipo Canva Pro</a>
         </div>
 
         <div class="video-section">
-            <h2>How to Leave Teams That Are No Longer Useful</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/TY-TFiCpJBE?si=0HKRvoEOZe9kMjI9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2>Cómo salir de los equipos que ya no son útiles</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jHmDokQLXFw?si=lFhnfJ1sW5qNcK9Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 TrustZone Store. All rights reserved.</p>
+        <p>&copy; 2023 TrustZone Store. Todos los derechos reservados.</p>
         <div class="footer-contact">
-            <p>📞 Contact us via WhatsApp: <a href="https://wa.me/56982195919" target="_blank">+56 9 8219 5919</a></p>
-            <p>📸 Follow us on Instagram: <a href="https://www.instagram.com/trustzone_store" target="_blank">@trustzone_store</a></p>
+            <p>📞 Contáctanos vía WhatsApp: <a href="https://wa.me/56982195919" target="_blank">+56 9 8219 5919</a></p>
+            <p>📸 Síguenos en Instagram: <a href="https://www.instagram.com/trustzone_store" target="_blank">@trustzone_store</a></p>
         </div>
         <div class="footer-icons">
             <a href="https://wa.me/56982195919" target="_blank"><i class="fab fa-whatsapp"></i></a>
