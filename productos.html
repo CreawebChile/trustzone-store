@@ -1,234 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
-</head>
-<!-- Favicon para navegadores estándar -->
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-
-<!-- Favicons para diferentes tamaños -->
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-
-<!-- Ícono para dispositivos Apple -->
-<link rel="apple-touch-icon" sizes="180x180" href="android-chrome-192x192.png">
-
-<!-- Android -->
-<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrustZone Store</title>
     
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        main {
-            flex: 1;
-            padding-top: 140px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333333;
-            color: white;
-            font-size: 16px;
-            line-height: 1.5;
-            margin-top: auto;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .navbar .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            text-decoration: none;
-            color: #fff;
-        }
-        .navbar .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        .navbar nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        .navbar nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .navbar nav ul li a:hover {
-            color: #ff9800;
-        }
-        .menu-icon {
-            display: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            color: #fff;
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        @media (max-width: 768px) {
-            .navbar {
-                flex-wrap: wrap;
-            }
-            .navbar nav ul {
-                display: none;
-                flex-direction: column;
-                background-color: #333;
-                position: fixed;
-                top: 60px;
-                left: 0;
-                right: 0;
-                width: 100%;
-                padding: 20px;
-                gap: 10px;
-                border-top: 2px solid #ff9800;
-                z-index: 99;
-            }
-            .menu-icon {
-                display: block;
-            }
-            .navbar nav ul.active {
-                display: flex;
-            }
-        }
-        .menu-icon.active i {
-            transform: rotate(90deg);
-            transition: transform 0.3s ease;
-        }
-        .search-bar {
-            margin: 20px auto;
-            display: flex;
-            gap: 10px;
-            max-width: 1200px;
-            padding: 0 20px;
-        }
-        .search-bar input, .search-bar select {
-            padding: 10px;
-            font-size: 14px;
-            width: 100%;
-            max-width: 200px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .product-card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .product-card:hover {
-            transform: scale(1.05);
-        }
-        .product-image {
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        .product-details {
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-        .product-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 0 0 10px 0;
-        }
-        .product-price {
-            color: #ff5722;
-            margin: 10px 0;
-            font-size: 16px;
-        }
-        .buy-button {
-            display: inline-block;
-            background-color: #25d366;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: auto;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 90%;
-            max-width: 500px;
-            border-radius: 10px;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-        }
-    </style>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/shared-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/productos-styles.css">
+    
+    <!-- Scripts -->
+    <script src="js/shared.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -260,10 +51,10 @@
                 <option value="diseño">Diseño</option>
                 <option value="redes">Redes Sociales</option>
                 <option value="seguridad">Seguridad</option>
-                <option value="musica">Música</option>
                 <option value="streaming">Streaming</option>
                 <option value="vpn">VPN</option>
                 <option value="gaming">Gaming</option>
+                <option value="oferta">Ofertas</option>
             </select>
             <select id="filter-price">
                 <option value="">Todos los Precios</option>
@@ -334,7 +125,7 @@
                     <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Office%20365%20Personal%201%20año" class="buy-button">Comprar</a>
                 </div>
             </div>
-            <div class="product-card" data-category="seguridad" data-price="3990" data-best-seller="false" data-description="Express VPN para 5 dispositivos durante 1 mes, puedes usarlo para cambiar tu ubicación y acceder a contenido de otros países en Netflix u otras plataformas.">
+            <div class="product-card" data-category="seguridad,vpn" data-price="3990" data-best-seller="false" data-description="Express VPN para 5 dispositivos durante 1 mes, puedes usarlo para cambiar tu ubicación y acceder a contenido de otros países en Netflix u otras plataformas.">
                 <div class="product-image" style="background-image: url('images/expressvpn.jpg');"></div>
                 <div class="product-details">
                     <h3 class="product-title">Express VPN 1 mes</h3>
@@ -387,7 +178,7 @@
 
         </div>
 
-        <!-- Modal -->
+        <!-- Modal (versión original) -->
         <div id="product-modal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -417,32 +208,45 @@
 
             function filterProducts() {
                 const searchText = searchInput.value.toLowerCase();
-                const category = categoryFilter.value;
+                const category = categoryFilter.value.toLowerCase();
                 const price = priceFilter.value;
                 const bestSeller = bestSellerFilter.value;
 
-                let filteredProducts = products.filter(product => {
+                products.forEach(product => {
+                    const productCategories = product.dataset.category.toLowerCase().split(',');
+                    
                     let matchesSearch = product.querySelector('.product-title').textContent.toLowerCase().includes(searchText);
-                    let matchesCategory = !category || product.dataset.category === category;
+                    let matchesCategory = category === '' || productCategories.includes(category);
                     let matchesPrice = true;
-                    if (price === 'low') matchesPrice = parseFloat(product.dataset.price) <= 5000;
-                    if (price === 'high') matchesPrice = parseFloat(product.dataset.price) > 5000;
-                    let matchesBestSeller = !bestSeller || (bestSeller === 'best' && product.dataset.bestSeller === 'true');
-                    return matchesSearch && matchesCategory && matchesPrice && matchesBestSeller;
-                });
+                    
+                    const productPrice = parseFloat(product.dataset.price);
+                    if (price === 'low') {
+                        matchesPrice = productPrice <= 5000;
+                    } else if (price === 'high') {
+                        matchesPrice = productPrice > 5000;
+                    }
+                    
+                    let matchesBestSeller = bestSeller === '' || 
+                        (bestSeller === 'best' && product.dataset.bestSeller === 'true');
 
-                productGrid.innerHTML = '';
-                filteredProducts.forEach(product => productGrid.appendChild(product));
+                    if (matchesSearch && matchesCategory && matchesPrice && matchesBestSeller) {
+                        product.style.display = '';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
             }
 
+            // Event listeners
             searchInput.addEventListener('input', filterProducts);
             categoryFilter.addEventListener('change', filterProducts);
             priceFilter.addEventListener('change', filterProducts);
             bestSellerFilter.addEventListener('change', filterProducts);
 
+            // Modal functionality
             productGrid.addEventListener('click', function (e) {
                 const card = e.target.closest('.product-card');
-                if (card) {
+                if (card && !e.target.classList.contains('buy-button')) {
                     modalTitle.textContent = card.querySelector('.product-title').textContent;
                     modalDescription.textContent = card.dataset.description;
                     modal.style.display = 'block';

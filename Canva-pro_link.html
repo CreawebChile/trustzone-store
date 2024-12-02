@@ -142,19 +142,46 @@
         }
 
         .btn {
-            padding: 15px 30px;
-            background-color: #ff5722;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #00c4cc, #7d2ae8);
             color: #fff;
             text-decoration: none;
             border-radius: 30px;
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 196, 204, 0.3);
+            border: none;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn:hover {
-            background-color: #e64a19;
-            transform: translateY(-5px);
+            background: linear-gradient(45deg, #7d2ae8, #00c4cc);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 196, 204, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 10px rgba(0, 196, 204, 0.2);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .btn:hover::before {
+            transform: rotate(45deg) translateX(50%);
         }
 
         .video-section {
@@ -257,15 +284,29 @@
             <h1>Enlace Canva Pro</h1>
         </div>
 
-        <p class="instructions">Obtén acceso instantáneo a Canva Pro uniéndote a nuestro equipo profesional utilizando el enlace a continuación. Una vez que termine tu suscripción, vuelve aquí para unirte al grupo actualizado. Asegúrate de tener acceso ininterrumpido revisando regularmente los enlaces actualizados. Este grupo de Canva VENCE EL 04/11. A partir de esa fecha, revisa nuevamente este enlace.</p>
+        <p class="instructions">
+            Obtén acceso instantáneo a Canva Pro uniéndote a nuestro equipo profesional utilizando el enlace a continuación. 
+            Una vez que termine tu suscripción, vuelve aquí para unirte al grupo actualizado. 
+            Asegúrate de tener acceso ininterrumpido revisando regularmente los enlaces actualizados. 
+            Este grupo de Canva VENCE EL <span style="background-color: #f4c93b; padding: 2px 6px; border-radius: 4px; font-weight: bold;">31/12/2024</span>. A partir de esa fecha, revisa nuevamente este enlace.
+        </p>
         
         <div class="canva-buttons">
-            <a href="https://www.canva.com/brand/join?token=n0zVZq_fEeiuaUjZPN5MuQ&referrer=team-invite" class="btn">Unirse al equipo Canva Pro</a>
+            <a href="https://www.canva.com/brand/join?token=3v-75tofiX4P9fcBeRUJJQ&referrer=team-invite" class="btn">
+                Unirse al equipo Canva Pro
+            </a>
         </div>
 
         <div class="video-section">
             <h2>Cómo salir de los equipos que ya no son útiles</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/jHmDokQLXFw?si=lFhnfJ1sW5qNcK9Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/jHmDokQLXFw?si=lFhnfJ1sW5qNcK9Q" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+            </iframe>
         </div>
     </div>
 

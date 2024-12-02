@@ -1,0 +1,234 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    flex: 1;
+    padding-top: 140px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333333;
+    color: white;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #ff9800;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+    .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+        gap: 10px;
+        border-top: 2px solid #ff9800;
+        z-index: 99;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .navbar nav ul.active {
+        display: flex;
+    }
+}
+
+.menu-icon.active i {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.search-bar {
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.search-bar input, .search-bar select {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.product-details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.product-price {
+    color: #ff5722;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.buy-button {
+    display: inline-block;
+    background-color: #25d366;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+} 
