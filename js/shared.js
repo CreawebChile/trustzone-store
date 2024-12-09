@@ -1,12 +1,16 @@
 function toggleMenu() {
     const menu = document.getElementById('nav-menu');
     const menuIcon = document.querySelector('.menu-icon');
-    if (menu.style.display === 'flex') {
-        menu.style.display = 'none';
-        menuIcon.classList.remove('active');
-    } else {
+    
+    menu.classList.toggle('active');
+    menuIcon.setAttribute('aria-expanded', 
+        menuIcon.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
+    );
+    
+    if (menu.classList.contains('active')) {
         menu.style.display = 'flex';
-        menuIcon.classList.add('active');
+    } else {
+        menu.style.display = 'none';
     }
 }
 
