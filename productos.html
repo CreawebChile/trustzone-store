@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="css/shared-styles.css">
     <link rel="stylesheet" type="text/css" href="css/productos-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/animations.css">
     
     <!-- Scripts -->
     <script src="js/shared.js"></script>
@@ -42,6 +43,20 @@
         </div>
     </header>
 
+    <div class="floating-elements">
+        <i class="floating-icon fas fa-gift"></i>
+        <i class="floating-icon fas fa-tree"></i>
+        <i class="floating-icon fas fa-star"></i>
+        <i class="floating-icon fas fa-snowflake"></i>
+    </div>
+
+    <div class="santa-container">
+        <div class="santa">
+            <i class="fas fa-sleigh"></i>
+            <i class="fas fa-user-alt" style="color: #ff0000; margin-left: -15px;"></i>
+        </div>
+    </div>
+
     <main>
         <div class="search-bar">
             <input type="text" id="search" placeholder="Buscar productos...">
@@ -52,6 +67,7 @@
                 <option value="redes">Redes Sociales</option>
                 <option value="seguridad">Seguridad</option>
                 <option value="streaming">Streaming</option>
+                <option value="musica">Música</option>
                 <option value="vpn">VPN</option>
                 <option value="gaming">Gaming</option>
                 <option value="oferta">Ofertas</option>
@@ -69,7 +85,7 @@
 
         <div class="product-grid" id="product-grid">
             <!-- Productos con MercadoPago primero -->
-            <div class="product-card" data-category="diseño" data-price="2990" data-best-seller="true" data-description="Acceso garantizado a Canva Pro por un año, ¡y la posibilidad de mantenerlo para siempre! Nota: El acceso de por vida está sujeto a disponibilidad y demanda.">
+            <div class="product-card" data-category="diseño" data-price="2990" data-best-seller="true" data-description="Desbloquea todo el potencial creativo con Canva Pro por un año completo. Accede a más de 100 millones de fotos y elementos premium, más de 3000 fuentes exclusivas, y todas las herramientas profesionales. Incluye la función de eliminar fondos, redimensionar diseños y acceso a contenido animado. ¡Con posibilidad de mantenerlo para siempre! La cuenta se entrega con acceso inmediato y garantizado.">
                 <div class="product-image" style="background-image: url('images/canvapro.jpg');"></div>
                 <div class="product-details">
                     <h3 class="product-title">Canva Pro 1 año/para siempre</h3>
@@ -83,7 +99,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="seguridad" data-price="5500" data-best-seller="true" data-description="Protección contra malware y virus durante un año con McAfee.">
+            <div class="product-card" data-category="seguridad" data-price="5500" data-best-seller="true" data-description="Protección completa para tu dispositivo con McAfee AntiVirus Plus 2024. Incluye protección en tiempo real contra virus, malware, ransomware y amenazas zero-day. Navegación web segura, gestor de contraseñas premium y optimización del rendimiento del sistema. Licencia original por 1 año con actualizaciones automáticas.">
                 <div class="product-image" style="background-image: url('images/Packshot_AntiVirusPlus.webp');"></div>
                 <div class="product-details">
                     <h3 class="product-title">McAfee AntiVirus (2024) - 1 Año</h3>
@@ -97,7 +113,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="gaming" data-price="4990" data-best-seller="false" data-description="Control de retroceso del mouse. No es baneable, ya que no interfiere con los archivos del juego. Ideal para juegos de disparos.">
+            <div class="product-card" data-category="gaming" data-price="4990" data-best-seller="false" data-description="Mejora tu precisión en juegos FPS con nuestro Anti Recoil para mouse. Software optimizado que ajusta automáticamente el control de retroceso, compatible con todos los juegos de disparos populares. 100% seguro y no detectable, ya que funciona a nivel de hardware. Incluye diferentes perfiles personalizables y soporte técnico.">
                 <div class="product-image" style="background-image: url('images/Antirecoil.jpg');"></div>
                 <div class="product-details">
                     <h3 class="product-title">Anti Recoil para Mouse</h3>
@@ -111,7 +127,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="gaming" data-price="1990" data-best-seller="false" data-description="Esta macro alza mira en juegos como Free Fire en PC, mejorando la precisión en el juego.">
+            <div class="product-card" data-category="gaming" data-price="1990" data-best-seller="false" data-description="Optimiza tu gameplay con nuestra macro especializada para PC. Mejora significativamente tu precisión y tiempo de respuesta en juegos como Free Fire. Incluye configuraciones predefinidas, ajustes personalizables y actualizaciones gratuitas. Fácil de instalar y usar, con tutorial detallado incluido.">
                 <div class="product-image" style="background-image: url('images/macromouse.jpg');"></div>
                 <div class="product-details">
                     <h3 class="product-title">Macro para Mouse</h3>
@@ -127,7 +143,7 @@
 
             <!-- Agregar después de los productos con MercadoPago y antes de ChatGPT -->
 
-            <div class="product-card" data-category="productividad" data-price="5500" data-best-seller="false" data-description="Suite completa de Office 365 por un año, incluye Word, Excel, y más.">
+            <div class="product-card" data-category="productividad" data-price="5500" data-best-seller="false" data-description="Microsoft Office 365 Personal con licencia original por 1 año. Incluye acceso completo a Word, Excel, PowerPoint, Outlook y OneNote en su última versión. 1TB de almacenamiento en OneDrive, actualizaciones automáticas y uso en múltiples dispositivos. Ideal para trabajo, estudio o uso personal.">
                 <div class="product-image" style="background-image: url('images/microsftOffice.png');"></div>
                 <div class="product-details">
                     <h3 class="product-title">Microsoft Office 365 Personal por 1 año</h3>
@@ -136,7 +152,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="seguridad,vpn" data-price="3990" data-best-seller="false" data-description="Express VPN para 5 dispositivos durante 1 mes, puedes usarlo para cambiar tu ubicación y acceder a contenido de otros países en Netflix u otras plataformas.">
+            <div class="product-card" data-category="seguridad,vpn" data-price="3990" data-best-seller="false" data-description="Express VPN Premium: La mejor VPN del mercado. Conexión ultra rápida, más de 160 ubicaciones en 94 países. Perfecto para streaming, gaming y navegación segura. Desbloquea contenido geo-restringido en Netflix, Disney+, HBO y más. Incluye política de no registros, encriptación de nivel militar y soporte 24/7. Válido para 5 dispositivos simultáneos.">
                 <div class="product-image" style="background-image: url('images/expressvpn.jpg');"></div>
                 <div class="product-details">
                     <h3 class="product-title">Express VPN 1 mes</h3>
@@ -146,7 +162,7 @@
             </div>
 
             <!-- Productos con enlace a WhatsApp después -->
-            <div class="product-card" data-category="productividad" data-price="4990" data-best-seller="true" data-description="Accede a ChatGPT durante un mes con una cuenta compartida. ¡Oferta limitada!">
+            <div class="product-card" data-category="productividad" data-price="4990" data-best-seller="true" data-description="Acceso Premium a ChatGPT Plus por 1 mes. Disfruta de GPT-4, el modelo más avanzado de OpenAI, con respuestas más rápidas y precisas. Incluye acceso a plugins exclusivos, DALL-E 3 para generación de imágenes, y navegación web en tiempo real. Ideal para trabajo, estudio o desarrollo de proyectos.">
                 <div class="product-image" style="background-image: url('images/chatgpt.jpg');"></div>
                 <div class="product-details">
                     <h3 class="product-title">ChatGPT 1 mes (cuenta compartida)</h3>
@@ -155,7 +171,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="streaming" data-price="3990" data-best-seller="false" data-description="Disfruta de Amazon Prime Video y Amazon Music por un mes completo. Acceso a películas, series, música y más.">
+            <div class="product-card" data-category="streaming" data-price="3990" data-best-seller="false" data-description="Paquete completo de Amazon Prime: Incluye Prime Video con miles de películas y series exclusivas en HD, Amazon Music con más de 100 millones de canciones sin anuncios, envíos Prime gratis y acceso a Prime Gaming. Contenido original de Amazon y estrenos exclusivos. Cuenta personal con acceso garantizado por 1 mes.">
                 <div class="product-image" style="background-image: url('images/prime video.png');"></div>
                 <div class="product-details">
                     <h3 class="product-title">Amazon Prime Video + Amazon Music 1 mes</h3>
@@ -164,7 +180,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="true" data-description="Incrementa tu popularidad en TikTok con 1.000 seguidores.">
+            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="true" data-description="Impulsa tu presencia en TikTok con 1.000 seguidores reales y activos. Entrega gradual y natural para mayor seguridad de tu cuenta. Incluye garantía de reposición, seguidores de calidad con avatares y biografías. Ideal para creadores de contenido, influencers y marcas. Entrega en 24-72 horas.">
                 <div class="product-image" style="background-image: url('images/seguidores-tiktok.webp');"></div>
                 <div class="product-details">
                     <h3 class="product-title">Seguidores de TikTok (1.000 seguidores)</h3>
@@ -173,7 +189,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="oferta" data-price="7500" data-best-seller="false" data-description="Obtén McAfee AntiVirus (2024) y Canva Pro (1 año) en un solo paquete.">
+            <div class="product-card" data-category="oferta" data-price="7500" data-best-seller="false" data-description="¡Paquete especial! Combina la seguridad premium de McAfee AntiVirus 2024 con el poder creativo de Canva Pro por 1 año. Protección completa para tu dispositivo y acceso a todas las herramientas de diseño profesional. Ahorra más de 30% comparado con la compra individual. Licencias originales con soporte técnico incluido.">
                 <div class="product-image" style="background-image: url('images/Promo-canva+mcafee.png');"></div>
                 <div class="product-details">
                     <h3 class="product-title">Oferta McAfee y Canva</h3>
@@ -182,7 +198,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="streaming" data-price="3990" data-best-seller="false" data-description="Disfruta de YouTube sin anuncios y accede a YouTube Music con este plan de 1 mes.">
+            <div class="product-card" data-category="streaming" data-price="3990" data-best-seller="false" data-description="YouTube Premium + YouTube Music: Experiencia completa sin interrupciones. Disfruta de todos los videos sin anuncios, reproducción en segundo plano y descarga offline. Incluye YouTube Music Premium con millones de canciones, playlists personalizadas y modo sin conexión. Cuenta personal con acceso garantizado por 1 mes.">
                 <div class="product-image" style="background-image: url('images/youtubepremium.jpg');"></div>
                 <div class="product-details">
                     <h3 class="product-title">YouTube Premium + YouTube Music 1 mes</h3>
@@ -191,12 +207,21 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="false" data-description="Obtén 1000 seguidores para tu canal de Twitch. Entrega rápida en 24 a 48 horas.">
+            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="false" data-description="Potencia tu canal de Twitch con 1.000 seguidores orgánicos. Seguidores de calidad con cuentas verificadas y activas en la plataforma. Incrementa tu visibilidad y alcanza el estatus de afiliado más rápido. Incluye garantía de reposición y entrega gradual en 24-48 horas para mantener la seguridad de tu cuenta.">
                 <div class="product-image" style="background-image: url('images/seguidorestwitch.jpg');"></div>
                 <div class="product-details">
                     <h3 class="product-title">1000 Seguidores de Twitch</h3>
                     <p class="product-price">$9.990 CLP</p>
                     <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%201000%20Seguidores%20de%20Twitch" class="buy-button">Comprar</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="musica" data-price="4990" data-best-seller="false" data-description="Disfruta de la mejor experiencia musical con Spotify Premium por 3 meses. Acceso completo a más de 82 millones de canciones en calidad premium (320kbps), sin anuncios ni interrupciones. Incluye modo offline para descargar tu música favorita, reproducción aleatoria ilimitada y saltos de canciones sin restricciones. Cuenta personal con credenciales únicas y soporte durante todo el período.">
+                <div class="product-image" style="background-image: url('images/spotify.png');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Spotify Premium - 3 meses</h3>
+                    <p class="product-price">$4.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Spotify%20Premium%20por%203%20meses" class="buy-button">Comprar</a>
                 </div>
             </div>
 
@@ -216,6 +241,13 @@
         <p>Gracias por confiar en nosotros para todas tus necesidades digitales.</p>
         <p>&copy; 2024 <strong>TrustZone Store</strong>. Todos los derechos reservados.</p>
     </footer>
+
+    <div class="floating-elements-bottom">
+        <i class="floating-icon fas fa-hat-santa"></i>
+        <i class="floating-icon fas fa-deer"></i>
+        <i class="floating-icon fas fa-bells"></i>
+        <i class="floating-icon fas fa-candy-cane"></i>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
