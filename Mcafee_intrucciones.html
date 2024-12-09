@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrucciones de Activación - McAfee</title>
+    <!-- Favicons -->
+    <!-- Favicon para navegadores estándar -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <!-- Favicons para diferentes tamaños -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+
+    <!-- Ícono para dispositivos Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="android-chrome-192x192.png">
+
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+
+    <!-- Resto de los enlaces existentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .mcafee-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        .mcafee-header {
+            background: #C8102E; /* Rojo McAfee */
+            padding: 25px;
+            text-align: center;
+        }
+
+        .mcafee-logo {
+            width: 60px;
+            height: auto;
+            margin-bottom: 10px;
+            filter: brightness(0) invert(1); /* Mantiene el logo blanco sobre fondo rojo */
+            max-width: 120px; /* Ajustamos el tamaño máximo */
+        }
+
+        .mcafee-header h3 {
+            color: white;
+            margin: 10px 0 0;
+            font-weight: normal;
+            font-size: 1.2em;
+        }
+
+        .mcafee-content {
+            padding: 20px;
+        }
+
+        .code-container {
+            text-align: center;
+        }
+
+        .hidden-code {
+            display: block;
+            font-family: monospace;
+            font-size: 20px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            filter: blur(8px);
+            transition: filter 0.3s ease;
+            user-select: none;
+        }
+
+        .show-code {
+            filter: blur(0);
+            user-select: all;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .toggle-code {
+            background: #C8102E;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-code:hover {
+            background: #a00d25;
+        }
+
+        .copy-code {
+            background: #333;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 38px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-code:hover {
+            background: #444;
+        }
+
+        .copy-code.copied {
+            background: #28a745;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .instructions h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .instructions ol {
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .instructions a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .instructions a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .video-container {
+            margin: 30px auto;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        .support-text {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .support-text a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .support-text a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+
+        .footer-contact {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .footer-contact a {
+            color: #ff9800;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #e68900;
+        }
+
+        .footer-icons {
+            margin-top: 15px;
+        }
+
+        .footer-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-icons a:hover {
+            color: #ff9800;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main.instructions {
+            margin-top: 100px;
+            flex: 1;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                width: calc(100% - 20px);
+                max-width: 300px;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .navbar nav.active ul {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <img src="images/Logotipo Tecnología Azul (2).png" alt="Logo de TrustZone">
+                TrustZone Store
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Inicio</a></li>
+                    <li><a href="index.html#about">Sobre Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="index.html#contact">Contacto</a></li>
+                    <li><a href="Terminos-y-condiciones.html">Términos y Condiciones</a></li>
+                </ul>
+            </nav>
+            <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <main class="instructions">
+        <div class="mcafee-card">
+            <div class="mcafee-header">
+                <img src="https://logodownload.org/wp-content/uploads/2019/05/mcafee-logo-0.png" alt="McAfee Logo" class="mcafee-logo">
+                <h3>License Key</h3>
+            </div>
+            <div class="mcafee-content">
+                <div class="code-container">
+                    <span class="hidden-code" id="activation-code">W34N7-VJF44-93RT4-V94N2-APHJ2</span>
+                    <div class="button-container">
+                        <button class="toggle-code" id="toggleCode">
+                            <i class="fas fa-eye"></i> Mostrar Código
+                        </button>
+                        <button class="copy-code" id="copyCode" title="Copiar al portapapeles">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Sigue estos pasos para activar tu suscripción:</h2>
+        <ol>
+            <li>Accede a la <a href="https://www.mcafee.com/consumer/en-us/ipz/r2d/flows/retailredemption.html" target="_blank">página oficial de McAfee</a></li>
+            <li>Inicia sesión o crea una cuenta: Ingresa con tus credenciales o crea una cuenta nueva si no tienes una.</li>
+            <li>Ingresa tu código de activación: Introduce el código que recibiste al comprar el producto.</li>
+            <li>Descarga e instala el software: Una vez activada la suscripción, descarga e instala McAfee en tu dispositivo.</li>
+            <li>Protege tu dispositivo: Después de la instalación, tu dispositivo estará protegido automáticamente.</li>
+        </ol>
+
+        <div class="video-container">
+            <p>Sigue este video explicativo para completar el proceso de activación:</p>
+            <iframe width="560" height="315" 
+                src="https://www.youtube-nocookie.com/embed/QVmk9iJk3lE?si=AyArzUpet6UWWzBU&amp;start=24" 
+                title="Tutorial de activación McAfee" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="support-text">
+            <p>Si tienes algún problema, <a href="#soporte">contacta con nuestro soporte técnico aquí</a>.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 TrustZone Store. Todos los derechos reservados.</p>
+        <div class="footer-contact">
+            <p>📞 Contáctanos vía WhatsApp: <a href="https://wa.me/56982195919" target="_blank">+56 9 8219 5919</a></p>
+            <p>📸 Síguenos en Instagram: <a href="https://www.instagram.com/trustzone_store" target="_blank">@trustzone_store</a></p>
+        </div>
+        <div class="footer-icons">
+            <a href="https://wa.me/56982195919" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/trustzone_store" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+    document.getElementById('toggleCode').addEventListener('click', function() {
+        const codeElement = document.getElementById('activation-code');
+        const button = this;
+        
+        if (codeElement.classList.contains('hidden-code')) {
+            codeElement.classList.remove('hidden-code');
+            codeElement.classList.add('show-code');
+            button.innerHTML = '<i class="fas fa-eye-slash"></i> Ocultar Código';
+        } else {
+            codeElement.classList.remove('show-code');
+            codeElement.classList.add('hidden-code');
+            button.innerHTML = '<i class="fas fa-eye"></i> Mostrar Código';
+        }
+    });
+
+    document.getElementById('copyCode').addEventListener('click', function() {
+        const codeElement = document.getElementById('activation-code');
+        const code = codeElement.textContent;
+        
+        navigator.clipboard.writeText(code).then(() => {
+            this.classList.add('copied');
+            this.innerHTML = '<i class="fas fa-check"></i>';
+            
+            setTimeout(() => {
+                this.classList.remove('copied');
+                this.innerHTML = '<i class="fas fa-copy"></i>';
+            }, 2000);
+        });
+    });
+
+    function toggleMenu() {
+        const nav = document.querySelector('nav');
+        nav.classList.toggle('active');
+    }
+    </script>
+</body>
+</html>
