@@ -28,11 +28,12 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 10px 20px;
+            padding: 15px 20px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
+            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
         }
 
         .navbar {
@@ -78,6 +79,7 @@
             display: none;
             font-size: 1.8em;
             cursor: pointer;
+            color: #fff;
         }
 
         .container {
@@ -135,17 +137,13 @@
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 40px 20px;
+            margin-top: auto;
         }
 
         .footer-contact {
             margin-top: 10px;
             font-size: 1.1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
         }
 
         .footer-contact p {
@@ -167,22 +165,24 @@
 
         .footer-icons {
             margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
         }
 
         .footer-icons a {
-            color: #ff9800;
-            font-size: 2rem;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.8rem;
             transition: color 0.3s ease;
         }
 
         .footer-icons a:hover {
-            color: #e68900;
+            color: #ff9800;
         }
 
-        @media (max-width: 768px) {
+        @media screen and (max-width: 768px) {
+            .navbar {
+                padding-right: 20px;
+            }
+
             .navbar nav ul {
                 display: none;
                 flex-direction: column;
@@ -190,10 +190,12 @@
                 background-color: #333;
                 position: absolute;
                 top: 60px;
-                right: 20px;
-                width: 200px;
-                padding: 10px;
+                right: 10px;
+                width: calc(100% - 20px);
+                max-width: 300px;
+                padding: 15px;
                 border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             }
 
             .navbar nav.active ul {
@@ -202,7 +204,7 @@
 
             .menu-icon {
                 display: block;
-                color: #fff;
+                margin-right: 10px;
             }
         }
 
@@ -240,8 +242,8 @@
     <!-- Navbar -->
     <header>
         <div class="navbar">
-            <a href="index.html" class="logo">
-                <img src="images/Logotipo%20Tecnolog%C3%ADa%20Azul%20(2).png" alt="Logo de TrustZone">
+            <a href="#" class="logo">
+                <img src="images/Logotipo Tecnología Azul (2).png" alt="Logo de TrustZone">
                 TrustZone Store
             </a>
             <nav>
@@ -270,8 +272,13 @@
         </div>
 
         <div class="info-box">
-            <h2>Métodos de pago seguros</h2>
-            <p>Utilizamos <span class="highlight">Mercado Pago</span> y <span class="highlight">PayPal</span>, que proporcionan seguridad tanto al comprador como al vendedor, ofreciendo protección total durante el proceso de compra.</p>
+            <h2>Métodos de pago y proceso de compra</h2>
+            <p>Ofrecemos dos modalidades de compra para tu comodidad:</p>
+            <ul>
+                <li><strong>Compra directa:</strong> Realiza tu pago de forma inmediata a través de nuestra página web, eligiendo el producto deseado.</li>
+                <li><strong>Atención personalizada:</strong> Contacta con nosotros vía WhatsApp para recibir asistencia durante todo el proceso.</li>
+            </ul>
+            <p>En ambos casos, utilizamos <span class="highlight">Mercado Pago</span> y <span class="highlight">PayPal</span> como plataformas de pago seguras, proporcionando protección total durante el proceso de compra.</p>
         </div>
 
         <div class="info-box">
@@ -298,7 +305,7 @@
         <p>&copy; 2023 TrustZone Store. Todos los derechos reservados.</p>
         <div class="footer-contact">
             <p>📞 Contáctanos vía WhatsApp: <a href="https://wa.me/56982195919" target="_blank">+56 9 8219 5919</a></p>
-            <p>🖼️ Síguenos en Instagram: <a href="https://www.instagram.com/trustzone_store" target="_blank">@trustzone_store</a></p>
+            <p>📸 Síguenos en Instagram: <a href="https://www.instagram.com/trustzone_store" target="_blank">@trustzone_store</a></p>
         </div>
         <div class="footer-icons">
             <a href="https://wa.me/56982195919" target="_blank"><i class="fab fa-whatsapp"></i></a>

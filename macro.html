@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="google-adsense-account" content="ca-pub-1273212656995497">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TrustZone Store - Descarga tu Macro para Mouse">
+    <title>TrustZone Store - Macro para Mouse</title>
+    
+    <!-- Favicon para navegadores estándar -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <!-- Favicons para diferentes tamaños -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+
+    <!-- Ícono para dispositivos Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="android-chrome-192x192.png">
+
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 100px auto 0;
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            color: #222;
+            margin-bottom: 30px;
+        }
+
+        .instructions {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+            margin: 20px 0;
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+        }
+
+        .instructions-button {
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: #fff;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            border: none;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .instructions-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .detailed-instructions {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: left;
+            display: none;
+        }
+
+        .instructions-text {
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+            color: #333;
+            overflow-x: auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+
+        .footer-contact {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .footer-contact a {
+            color: #ff9800;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #e68900;
+        }
+
+        .footer-icons {
+            margin-top: 15px;
+        }
+
+        .footer-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-icons a:hover {
+            color: #ff9800;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .download-button {
+                padding: 12px 30px;
+                font-size: 1.1em;
+            }
+
+            .instructions-text {
+                font-size: 0.85em;
+            }
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar nav ul li a:hover {
+            color: #ff9800;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                padding-right: 20px;
+            }
+
+            .navbar nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                width: calc(100% - 20px);
+                max-width: 300px;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .navbar nav.active ul {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+                margin-right: 10px;
+            }
+        }
+
+        /* Estilos mejorados para el botón de descarga */
+        .download-section {
+            position: relative;
+            margin: 40px 0;
+            padding: 20px;
+        }
+
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 50px;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .download-button:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(45deg) translateY(-50%);
+            transition: transform 0.6s ease;
+        }
+
+        .download-button:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .download-button:hover:before {
+            transform: rotate(45deg) translateY(0);
+        }
+
+        .download-button:active {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(46, 204, 113, 0.3);
+        }
+
+        .download-button i {
+            margin-right: 12px;
+            font-size: 1.2em;
+            animation: bounce 2s infinite;
+        }
+
+        /* Efecto de pulso alrededor del botón */
+        .download-section:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle, rgba(46, 204, 113, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            animation: pulse 2s infinite;
+            pointer-events: none;
+        }
+
+        /* Animación de rebote para el ícono */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+
+        /* Animación de pulso para el fondo */
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.05);
+                opacity: 0;
+            }
+        }
+
+        /* Tooltip personalizado */
+        .download-button:after {
+            content: '¡Haz clic para descargar!';
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            white-space: nowrap;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .download-button:hover:after {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+        }
+
+        /* Efecto de brillo en hover */
+        .download-button .shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-25deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            20% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <img src="images/Logotipo Tecnología Azul (2).png" alt="Logo de TrustZone">
+                TrustZone Store
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Inicio</a></li>
+                    <li><a href="index.html#about">Sobre Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="index.html#contact">Contacto</a></li>
+                    <li><a href="Terminos-y-condiciones.html">Términos y Condiciones</a></li>
+                </ul>
+            </nav>
+            <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="header">
+            <h1>Descarga Macro para Mouse</h1>
+        </div>
+
+        <div class="instructions">
+            <h2>Instrucciones de Descarga</h2>
+            <p>1. Haz clic en el botón de descarga a continuación para obtener el archivo ZIP.</p>
+            <p>2. Una vez descargado, extrae el contenido del archivo ZIP.</p>
+            <p>3. Sigue las instrucciones incluidas en el archivo para la instalación.</p>
+            <p>4. Si tienes alguna duda, no dudes en contactarnos por WhatsApp.</p>
+        </div>
+
+        <div class="download-section">
+            <a href="https://www.mediafire.com/file/yq2n25hwib8l59g/Macros_ahk.zip/file" class="download-button">
+                <i class="fas fa-download"></i>
+                Descargar Macro para Mouse
+                <div class="shine"></div>
+            </a>
+        </div>
+
+        <div class="instructions-container">
+            <button class="instructions-button" onclick="toggleInstructions()">
+                <i class="fas fa-book"></i>
+                Leer Instrucciones
+            </button>
+            
+            <div id="detailed-instructions" class="detailed-instructions" style="display: none;">
+                <pre class="instructions-text">
+#########################################
+#        Guía de Uso del Script         #
+#       Configuración Macros Trustzone  #
+#########################################
+
+Este script de AutoHotkey te permite configurar y ajustar la sensibilidad del ratón y el tiempo de espera entre movimientos de forma sencilla para simular el "alzar mira" al disparar en juegos como Free Fire. A continuación, se explica cómo funciona el script y cómo utilizarlo.
+
+=========================================
+REQUISITOS PREVIOS
+=========================================
+- AutoHotkey: Debes tener instalado AutoHotkey en tu computadora para ejecutar este script.
+ 
+  Descarga el archivo: AutoHotkey_1.1.37.02_setup
+                         O
+  Descárgalo desde: https://www.autohotkey.com/
+
+=========================================
+UBICACIÓN DEL ARCHIVO
+=========================================
+- **Archivo del Script**: Guarda el archivo del script en el Escritorio de tu computadora para facilitar su acceso.
+  - Nombre del archivo: `Macros_ahk.ahk`
+  - **Acceso Rápido**: Al tener el archivo en el Escritorio, podrás encontrarlo y abrirlo fácilmente cuando lo necesites.
+
+- **Carpeta de Sonidos**: La carpeta que contiene los sonidos necesarios para el script debe estar ubicada en el disco local **C:**. Asegúrate de que la ruta sea correcta para evitar errores en la ejecución del script.
+
+=========================================
+DESCRIPCIÓN DEL SCRIPT
+=========================================
+- **Sensibilidad y Compensación de Retroceso**:
+  Permite ajustar estos valores desde la interfaz gráfica.
+
+- **Valores Predeterminados**:
+  La sensibilidad predeterminada es 2 y la compensación de retroceso es 100.
+  Estos valores se pueden ajustar, pero se restablecen al reiniciar el script o al presionar "Restaurar Valores".
+
+- **Atajos de Teclado**:
+  Puedes usar atajos de teclado para modificar la sensibilidad y la compensación sin necesidad de abrir la interfaz.
+
+=========================================
+INSTRUCCIONES DE USO
+=========================================
+1. **Iniciar el Script**
+   - Haz doble clic en el archivo del script `Macros_ahk.ahk` en el Escritorio para ejecutarlo.
+   - Aparecerá una ventana con la interfaz gráfica para hacer ajustes.
+
+2. **Ajustar Sensibilidad y Compensación**
+   - **Usar Sliders**: Ajusta la sensibilidad (1-10) y la compensación (0-200) con los sliders.
+   - **Campos de Texto**: También puedes ingresar valores directamente en los campos de texto.
+   - **Restaurar Valores**: Presiona el botón "Restaurar Valores" para volver a los valores predeterminados.
+
+3. **Usar Atajos de Teclado**
+   - **F9**: Aumentar Sensibilidad
+   - **F10**: Disminuir Sensibilidad
+   - **F11**: Aumentar Compensación de Retroceso
+   - **F12**: Disminuir Compensación de Retroceso
+   - **F7**: Activar/Desactivar Script Anti-Recoil
+   - **F8**: Desactivar completamente el script
+   - **F6**: Activar Modo Silencioso (sin sonidos)
+
+4. **Guardar la Configuración**
+   - La configuración se restablece al predeterminado cada vez que reinicias el script o presionas "Restaurar Valores".
+
+5. **Detener el Script**
+   - Haz clic derecho en el icono de AutoHotkey en la bandeja del sistema (junto al reloj) y selecciona "Exit" para cerrar el script.
+
+=========================================
+EJEMPLO DE USO
+=========================================
+1. **Inicia el Script**: Doble clic en `Macros_ahk.ahk` en el Escritorio.
+2. **Ajusta Sensibilidad**: Usa el slider para cambiar el valor.
+3. **Restaurar Valores**: Haz clic en "Restaurar Valores" para volver a la configuración inicial.
+4. **Desactivar Script**: Presiona `F8` para desactivar el script.
+
+=========================================
+INFORMACIÓN ADICIONAL
+=========================================
+- El estado actual del script se muestra en la parte inferior de la interfaz o como un ToolTip temporal.
+- Puedes personalizar los valores predeterminados y ajustar el script según tus necesidades.
+
+#########################################
+#             ¡Disfruta!                #
+#########################################</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 TrustZone Store. Todos los derechos reservados.</p>
+        <div class="footer-contact">
+            <p>📞 Contáctanos vía WhatsApp: <a href="https://wa.me/56982195919" target="_blank">+56 9 8219 5919</a></p>
+            <p>📸 Síguenos en Instagram: <a href="https://www.instagram.com/trustzone_store" target="_blank">@trustzone_store</a></p>
+        </div>
+        <div class="footer-icons">
+            <a href="https://wa.me/56982195919" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/trustzone_store" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleInstructions() {
+            const instructions = document.getElementById('detailed-instructions');
+            if (instructions.style.display === 'none') {
+                instructions.style.display = 'block';
+                window.scrollTo({
+                    top: instructions.offsetTop,
+                    behavior: 'smooth'
+                });
+            } else {
+                instructions.style.display = 'none';
+            }
+        }
+
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

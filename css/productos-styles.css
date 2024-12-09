@@ -139,11 +139,9 @@ footer {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .product-card {
@@ -263,4 +261,49 @@ footer {
     max-width: 100% !important;
     background-color: #25d366 !important;
     transform: scale(1.02) !important;
+}
+
+@media screen and (max-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .product-card {
+        font-size: 0.9em;
+    }
+
+    .product-title {
+        font-size: 1em;
+    }
+
+    .product-price {
+        font-size: 0.95em;
+    }
+
+    .buy-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
 } 

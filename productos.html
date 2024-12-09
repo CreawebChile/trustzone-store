@@ -58,8 +58,8 @@
             </select>
             <select id="filter-price">
                 <option value="">Todos los Precios</option>
-                <option value="low">Menor Precio</option>
-                <option value="high">Mayor Precio</option>
+                <option value="low">Hasta $5.000</option>
+                <option value="high">Más de $5.000</option>
             </select>
             <select id="filter-best-sellers">
                 <option value="">Ordenar por</option>
@@ -68,15 +68,7 @@
         </div>
 
         <div class="product-grid" id="product-grid">
-            <!-- Aquí están los 14 productos -->
-            <div class="product-card" data-category="productividad" data-price="4990" data-best-seller="true" data-description="Accede a ChatGPT durante un mes con una cuenta compartida. ¡Oferta limitada!">
-                <div class="product-image" style="background-image: url('images/chatgpt.jpg');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">ChatGPT 1 mes (cuenta compartida)</h3>
-                    <p class="product-price">$4.990 CLP</p>
-                    <a href="https://wa.me/56982195919" class="buy-button">Comprar</a>
-                </div>
-            </div>
+            <!-- Productos con MercadoPago primero -->
             <div class="product-card" data-category="diseño" data-price="2990" data-best-seller="true" data-description="Acceso garantizado a Canva Pro por un año, ¡y la posibilidad de mantenerlo para siempre! Nota: El acceso de por vida está sujeto a disponibilidad y demanda.">
                 <div class="product-image" style="background-image: url('images/canvapro.jpg');"></div>
                 <div class="product-details">
@@ -90,31 +82,8 @@
                     </div>
                 </div>
             </div>
-            <div class="product-card" data-category="streaming" data-price="3990" data-best-seller="true" data-description="Disfruta de Amazon Prime Video y Amazon Music por un mes completo. Acceso a películas, series, música y más.">
-                <div class="product-image" style="background-image: url('images/prime video.png');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">Amazon Prime Video + Amazon Music 1 mes</h3>
-                    <p class="product-price">$3.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Amazon%20Prime%20Video%20y%20Amazon%20Music" class="buy-button">Comprar</a>
-                </div>
-            </div>
-            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="false" data-description="Aumenta tu presencia en Instagram con 1.000 seguidores.">
-                <div class="product-image" style="background-image: url('images/seguidores instagram.png');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">Seguidores de Instagram (1.000 seguidores)</h3>
-                    <p class="product-price">$9.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20los%20Seguidores%20de%20Instagram" class="buy-button">Comprar</a>
-                </div>
-            </div>
-            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="false" data-description="Incrementa tu popularidad en TikTok con 1.000 seguidores.">
-                <div class="product-image" style="background-image: url('images/seguidores-tiktok.webp');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">Seguidores de TikTok (1.000 seguidores)</h3>
-                    <p class="product-price">$9.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20los%20Seguidores%20de%20TikTok" class="buy-button">Comprar</a>
-                </div>
-            </div>
-            <div class="product-card" data-category="seguridad" data-price="5500" data-best-seller="false" data-description="Protección contra malware y virus durante un año con McAfee.">
+
+            <div class="product-card" data-category="seguridad" data-price="5500" data-best-seller="true" data-description="Protección contra malware y virus durante un año con McAfee.">
                 <div class="product-image" style="background-image: url('images/Packshot_AntiVirusPlus.webp');"></div>
                 <div class="product-details">
                     <h3 class="product-title">McAfee AntiVirus (2024) - 1 Año</h3>
@@ -127,6 +96,37 @@
                     </div>
                 </div>
             </div>
+
+            <div class="product-card" data-category="gaming" data-price="4990" data-best-seller="false" data-description="Control de retroceso del mouse. No es baneable, ya que no interfiere con los archivos del juego. Ideal para juegos de disparos.">
+                <div class="product-image" style="background-image: url('images/Antirecoil.jpg');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Anti Recoil para Mouse</h3>
+                    <p class="product-price">$4.990 CLP</p>
+                    <div class="payment-button">
+                        <script src="https://www.mercadopago.cl/integrations/v1/web-payment-checkout.js"
+                            data-preference-id="500424967-ef5216b4-bba2-49f5-b584-0b53ac3b130e" 
+                            data-source="button">
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="gaming" data-price="1990" data-best-seller="false" data-description="Esta macro alza mira en juegos como Free Fire en PC, mejorando la precisión en el juego.">
+                <div class="product-image" style="background-image: url('images/macromouse.jpg');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Macro para Mouse</h3>
+                    <p class="product-price">$1.990 CLP</p>
+                    <div class="payment-button">
+                        <script src="https://www.mercadopago.cl/integrations/v1/web-payment-checkout.js"
+                            data-preference-id="500424967-a08fc9ab-3e30-4097-8779-1f30dea96258" 
+                            data-source="button">
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agregar después de los productos con MercadoPago y antes de ChatGPT -->
+
             <div class="product-card" data-category="productividad" data-price="5500" data-best-seller="false" data-description="Suite completa de Office 365 por un año, incluye Word, Excel, y más.">
                 <div class="product-image" style="background-image: url('images/microsftOffice.png');"></div>
                 <div class="product-details">
@@ -135,6 +135,7 @@
                     <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Office%20365%20Personal%201%20año" class="buy-button">Comprar</a>
                 </div>
             </div>
+
             <div class="product-card" data-category="seguridad,vpn" data-price="3990" data-best-seller="false" data-description="Express VPN para 5 dispositivos durante 1 mes, puedes usarlo para cambiar tu ubicación y acceder a contenido de otros países en Netflix u otras plataformas.">
                 <div class="product-image" style="background-image: url('images/expressvpn.jpg');"></div>
                 <div class="product-details">
@@ -143,23 +144,36 @@
                     <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Express%20VPN%201%20mes" class="buy-button">Comprar</a>
                 </div>
             </div>
-            <div class="product-card" data-category="gaming" data-price="9990" data-best-seller="false" data-description="Control de retroceso del mouse. No es baneable, ya que no interfiere con los archivos del juego. Ideal para juegos de disparos.">
-                <div class="product-image" style="background-image: url('images/Antirecoil.jpg');"></div>
+
+            <!-- Productos con enlace a WhatsApp después -->
+            <div class="product-card" data-category="productividad" data-price="4990" data-best-seller="true" data-description="Accede a ChatGPT durante un mes con una cuenta compartida. ¡Oferta limitada!">
+                <div class="product-image" style="background-image: url('images/chatgpt.jpg');"></div>
                 <div class="product-details">
-                    <h3 class="product-title">Anti Recoil para Mouse</h3>
-                    <p class="product-price">$9.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Anti%20Recoil%20para%20Mouse" class="buy-button">Comprar</a>
+                    <h3 class="product-title">ChatGPT 1 mes (cuenta compartida)</h3>
+                    <p class="product-price">$4.990 CLP</p>
+                    <a href="https://wa.me/56982195919" class="buy-button">Comprar</a>
                 </div>
             </div>
-            <div class="product-card" data-category="gaming" data-price="9990" data-best-seller="false" data-description="Esta macro alza mira en juegos como Free Fire en PC, mejorando la precisión en el juego.">
-                <div class="product-image" style="background-image: url('images/macromouse.jpg');"></div>
+
+            <div class="product-card" data-category="streaming" data-price="3990" data-best-seller="false" data-description="Disfruta de Amazon Prime Video y Amazon Music por un mes completo. Acceso a películas, series, música y más.">
+                <div class="product-image" style="background-image: url('images/prime video.png');"></div>
                 <div class="product-details">
-                    <h3 class="product-title">Macro para Mouse</h3>
-                    <p class="product-price">$9.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Macro%20para%20Mouse" class="buy-button">Comprar</a>
+                    <h3 class="product-title">Amazon Prime Video + Amazon Music 1 mes</h3>
+                    <p class="product-price">$3.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Amazon%20Prime%20Video%20y%20Amazon%20Music" class="buy-button">Comprar</a>
                 </div>
             </div>
-            <div class="product-card" data-category="oferta" data-price="7500" data-best-seller="true" data-description="Obtén McAfee AntiVirus (2024) y Canva Pro (1 año) en un solo paquete.">
+
+            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="true" data-description="Incrementa tu popularidad en TikTok con 1.000 seguidores.">
+                <div class="product-image" style="background-image: url('images/seguidores-tiktok.webp');"></div>
+                <div class="product-details">
+                    <h3 class="product-title">Seguidores de TikTok (1.000 seguidores)</h3>
+                    <p class="product-price">$9.990 CLP</p>
+                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20los%20Seguidores%20de%20TikTok" class="buy-button">Comprar</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="oferta" data-price="7500" data-best-seller="false" data-description="Obtén McAfee AntiVirus (2024) y Canva Pro (1 año) en un solo paquete.">
                 <div class="product-image" style="background-image: url('images/Promo-canva+mcafee.png');"></div>
                 <div class="product-details">
                     <h3 class="product-title">Oferta McAfee y Canva</h3>
@@ -167,6 +181,7 @@
                     <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20la%20Oferta%20McAfee%20y%20Canva" class="buy-button">Comprar</a>
                 </div>
             </div>
+
             <div class="product-card" data-category="streaming" data-price="3990" data-best-seller="false" data-description="Disfruta de YouTube sin anuncios y accede a YouTube Music con este plan de 1 mes.">
                 <div class="product-image" style="background-image: url('images/youtubepremium.jpg');"></div>
                 <div class="product-details">
@@ -175,6 +190,7 @@
                     <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20YouTube%20Premium%20y%20YouTube%20Music%20por%201%20mes" class="buy-button">Comprar</a>
                 </div>
             </div>
+
             <div class="product-card" data-category="redes" data-price="9990" data-best-seller="false" data-description="Obtén 1000 seguidores para tu canal de Twitch. Entrega rápida en 24 a 48 horas.">
                 <div class="product-image" style="background-image: url('images/seguidorestwitch.jpg');"></div>
                 <div class="product-details">
@@ -183,8 +199,6 @@
                     <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%201000%20Seguidores%20de%20Twitch" class="buy-button">Comprar</a>
                 </div>
             </div>
-
-        </div>
 
         </div>
 
@@ -224,12 +238,12 @@
 
                 products.forEach(product => {
                     const productCategories = product.dataset.category.toLowerCase().split(',');
+                    const productPrice = parseInt(product.dataset.price);
                     
                     let matchesSearch = product.querySelector('.product-title').textContent.toLowerCase().includes(searchText);
                     let matchesCategory = category === '' || productCategories.includes(category);
                     let matchesPrice = true;
                     
-                    const productPrice = parseFloat(product.dataset.price);
                     if (price === 'low') {
                         matchesPrice = productPrice <= 5000;
                     } else if (price === 'high') {
