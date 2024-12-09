@@ -59,8 +59,8 @@
 
     <main>
         <div class="search-bar">
-            <input type="text" id="search" placeholder="Buscar productos...">
-            <select id="filter-category">
+            <input type="text" id="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+            <select id="filter-category" aria-label="Filtrar por categoría">
                 <option value="">Todas las Categorías</option>
                 <option value="productividad">Productividad</option>
                 <option value="diseño">Diseño</option>
@@ -72,20 +72,28 @@
                 <option value="gaming">Gaming</option>
                 <option value="oferta">Ofertas</option>
             </select>
-            <select id="filter-price">
+            <select id="filter-price" aria-label="Filtrar por precio">
                 <option value="">Todos los Precios</option>
                 <option value="low">Hasta $5.000</option>
                 <option value="high">Más de $5.000</option>
             </select>
-            <select id="filter-best-sellers">
+            <select id="filter-best-sellers" aria-label="Ordenar por">
                 <option value="">Ordenar por</option>
                 <option value="best">Más Vendidos</option>
+            </select>
+            <select id="currency-selector" aria-label="Seleccionar moneda">
+                <option value="CLP">🇨🇱 CLP</option>
+                <option value="USD">🇺🇸 USD</option>
+                <option value="EUR">🇪🇺 EUR</option>
+                <option value="GBP">🇬🇧 GBP</option>
+                <option value="ARS">🇦🇷 ARS</option>
+                <option value="MXN">🇲🇽 MXN</option>
             </select>
         </div>
 
         <div class="product-grid" id="product-grid">
             <!-- Productos con MercadoPago primero -->
-            <div class="product-card" data-category="diseño" data-price="2990" data-best-seller="true" data-description="Desbloquea todo el potencial creativo con Canva Pro por un año completo. Accede a más de 100 millones de fotos y elementos premium, más de 3000 fuentes exclusivas, y todas las herramientas profesionales. Incluye la función de eliminar fondos, redimensionar diseños y acceso a contenido animado. ¡Con posibilidad de mantenerlo para siempre! La cuenta se entrega con acceso inmediato y garantizado.">
+            <div class="product-card" data-category="diseño" data-price="5990" data-best-seller="true" data-description="Desbloquea todo el potencial creativo con Canva Pro por un año completo. Accede a más de 100 millones de fotos y elementos premium, más de 3000 fuentes exclusivas, y todas las herramientas profesionales. Incluye la función de eliminar fondos, redimensionar diseños y acceso a contenido animado. ¡Con posibilidad de mantenerlo para siempre! La cuenta se entrega con acceso inmediato y garantizado.">
                 <div class="product-image" style="background-image: url('images/canvapro.jpg');"></div>
                 <div class="product-details">
                     <h3 class="product-title">Canva Pro 1 año/para siempre</h3>
@@ -207,7 +215,7 @@
                 </div>
             </div>
 
-            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="false" data-description="Potencia tu canal de Twitch con 1.000 seguidores orgánicos. Seguidores de calidad con cuentas verificadas y activas en la plataforma. Incrementa tu visibilidad y alcanza el estatus de afiliado más rápido. Incluye garantía de reposición y entrega gradual en 24-48 horas para mantener la seguridad de tu cuenta.">
+            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="false" data-description="Potencia tu canal de Twitch con 1.000 seguidores orgánicos. Seguidores de calidad con cuentas verificadas y activas en la plataforma. Incrementa tu visibilidad y alcanza el estatus de afiliado más rápido. Incluye garantía de reposici��n y entrega gradual en 24-48 horas para mantener la seguridad de tu cuenta.">
                 <div class="product-image" style="background-image: url('images/seguidorestwitch.jpg');"></div>
                 <div class="product-details">
                     <h3 class="product-title">1000 Seguidores de Twitch</h3>
@@ -322,6 +330,61 @@
                     modal.style.display = 'none';
                 }
             });
+
+            // Agregar nueva funcionalidad de conversión de moneda
+            const currencySelector = document.getElementById('currency-selector');
+            let exchangeRates = {};
+            
+            // Función para cargar las tasas de cambio
+            async function loadExchangeRates() {
+                try {
+                    const response = await fetch('https://v6.exchangerate-api.com/v6/39571eeb2758bed148fa6bf3/latest/CLP');
+                    const data = await response.json();
+                    exchangeRates = data.conversion_rates;
+                } catch (error) {
+                    console.error('Error al cargar las tasas de cambio:', error);
+                }
+            }
+
+            // Función para dar formato al precio según la moneda
+            function formatPrice(price, currency) {
+                const formatter = new Intl.NumberFormat('es-CL', {
+                    minimumFractionDigits: currency === 'CLP' ? 0 : 2,
+                    maximumFractionDigits: currency === 'CLP' ? 0 : 2,
+                    useGrouping: true
+                });
+                
+                return formatter.format(price);
+            }
+
+            // Función para convertir precios
+            function convertPrice(priceInCLP, targetCurrency) {
+                if (targetCurrency === 'CLP') return formatPrice(priceInCLP, 'CLP');
+                const rate = exchangeRates[targetCurrency];
+                if (!rate) return formatPrice(priceInCLP, 'CLP');
+                
+                const convertedPrice = priceInCLP * rate;
+                return formatPrice(convertedPrice, targetCurrency);
+            }
+
+            // Función para actualizar los precios mostrados
+            function updatePrices() {
+                const selectedCurrency = currencySelector.value;
+                const products = document.querySelectorAll('.product-card');
+                
+                products.forEach(product => {
+                    const priceElement = product.querySelector('.product-price');
+                    const originalPrice = parseInt(product.dataset.price);
+                    const convertedPrice = convertPrice(originalPrice, selectedCurrency);
+                    priceElement.textContent = `${selectedCurrency === 'CLP' ? '$' : ''}${convertedPrice} ${selectedCurrency}`;
+                });
+            }
+
+            // Cargar tasas de cambio al inicio
+            loadExchangeRates();
+
+            // Evento para cambio de moneda
+            currencySelector.addEventListener('change', updatePrices);
         });
     </script>
 </body>
