@@ -240,6 +240,47 @@
         .footer-icons a:hover {
             color: #ff9800;
         }
+
+        .save-link {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .copy-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .copy-link input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 14px;
+            background-color: #fff;
+            cursor: text;
+        }
+
+        .copy-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <link rel="stylesheet" href="styles.css">
@@ -287,10 +328,20 @@
         <p class="instructions">
             Obtén acceso instantáneo a Canva Pro uniéndote a nuestro equipo profesional utilizando el enlace a continuación. 
             Una vez que termine tu suscripción, vuelve aquí para unirte al grupo actualizado. 
-            Asegúrate de tener acceso ininterrumpido revisando regularmente los enlaces actualizados. 
+            Asegúrate de tener acceso ininterrumpido revisando regularmente los enlaces actualizados.
             Este grupo de Canva VENCE EL <span style="background-color: #f4c93b; padding: 2px 6px; border-radius: 4px; font-weight: bold;">31/12/2024</span>. A partir de esa fecha, revisa nuevamente este enlace.
         </p>
-        
+
+        <div class="save-link">
+            <p>Recuerda guardar este enlace para que puedas regresar a la página cuando lo necesites:</p>
+            <div class="copy-link">
+                <input type="text" value="https://trustzonestore.com/Canva-pro_link.html" readonly>
+                <button onclick="copyLink()" class="copy-button">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+        </div>
+
         <div class="canva-buttons">
             <a href="https://www.canva.com/brand/join?token=3v-75tofiX4P9fcBeRUJJQ&referrer=team-invite" class="btn">
                 Unirse al equipo Canva Pro
@@ -328,6 +379,25 @@
         function toggleMenu() {
             const nav = document.querySelector('nav');
             nav.classList.toggle('active');
+        }
+
+        function copyLink() {
+            const linkInput = document.querySelector('.copy-link input');
+            linkInput.select();
+            linkInput.setSelectionRange(0, 99999); // Para dispositivos móviles
+            
+            try {
+                navigator.clipboard.writeText(linkInput.value);
+                const copyButton = document.querySelector('.copy-button');
+                const originalIcon = copyButton.innerHTML;
+                copyButton.innerHTML = '<i class="fas fa-check"></i>';
+                
+                setTimeout(() => {
+                    copyButton.innerHTML = originalIcon;
+                }, 2000);
+            } catch (err) {
+                console.error('Error al copiar:', err);
+            }
         }
     </script>
     <script type="module" src="script.js" defer></script>
