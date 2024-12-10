@@ -663,7 +663,7 @@
             <div class="movie-info">
                 <h3 class="movie-title">Querido Santa</h3>
                 <p class="price-tag">$1.000 CLP</p>
-                <a href="https://mpago.la/1tnNrRC" class="buy-button" target="_blank" onclick="checkPaymentCode('santa')">Comprar Ahora</a>
+                <a href="https://mpago.la/1tnNrRC" class="buy-button" target="_blank">Comprar Ahora</a>
                 <div class="coupon-container">
                     <input type="text" class="coupon-input" placeholder="Ingresa tu cupón">
                     <button class="apply-coupon" onclick="applyCoupon(this, 'querido santa.html')">Aplicar</button>
@@ -676,7 +676,7 @@
             <div class="movie-info">
                 <h3 class="movie-title">Moana 2</h3>
                 <p class="price-tag">$1.000 CLP</p>
-                <a href="https://mpago.la/2DBZyaD" class="buy-button" target="_blank" onclick="checkPaymentCode('moana')">Comprar Ahora</a>
+                <a href="https://mpago.la/2DBZyaD" class="buy-button" target="_blank">Comprar Ahora</a>
                 <div class="coupon-container">
                     <input type="text" class="coupon-input" placeholder="Ingresa tu cupón">
                     <button class="apply-coupon" onclick="applyCoupon(this, 'moana2.html')">Aplicar</button>
@@ -824,31 +824,15 @@
             }, 500);
         }
 
-        // Cierre autom��tico después de 3 segundos
+        // Cierre automático después de 3 segundos
         setTimeout(closePopup, 3000);
 
         function applyCoupon(button, moviePage) {
-            const couponInput = button.previousElementSibling;
-            const couponCode = couponInput.value.trim().toUpperCase();
-            
-            if (couponCode === 'TRUSTZONE PELIS') {
-                window.location.href = moviePage;
-            } else {
-                alert('Cupón no válido');
-                couponInput.value = '';
-            }
+            window.location.href = moviePage;
         }
 
         function checkPaymentCode(movie) {
-            const code = prompt('Después de realizar el pago, ingresa el código "compromoana" para Moana 2 o "santa" para Querido Santa:');
-            
-            if (movie === 'moana' && code === 'compromoana') {
-                window.location.href = 'moana2.html';
-            } else if (movie === 'santa' && code === 'santa') {
-                window.location.href = 'querido santa.html';
-            } else if (code !== null) { // Si el usuario ingresó un código incorrecto
-                alert('Código incorrecto. Por favor, verifica tu código después de realizar el pago.');
-            }
+            window.location.href = movie === 'moana' ? 'moana2.html' : 'querido santa.html';
         }
 
         function toggleShare() {
