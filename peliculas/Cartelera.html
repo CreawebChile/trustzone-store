@@ -470,6 +470,35 @@
             transform: scale(1.05);
             box-shadow: 0 0 15px rgba(0,158,227,0.5);
         }
+
+        .coupon-container {
+            margin-top: 10px;
+        }
+
+        .coupon-input {
+            padding: 8px 12px;
+            border: 2px solid #444;
+            border-radius: 15px;
+            background: #333;
+            color: white;
+            width: 70%;
+            margin-right: 5px;
+        }
+
+        .apply-coupon {
+            padding: 8px 12px;
+            background: linear-gradient(45deg, #e50914, #ff3019);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .apply-coupon:hover {
+            background: linear-gradient(45deg, #ff3019, #e50914);
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -518,6 +547,10 @@
                 <h3 class="movie-title">Querido Santa</h3>
                 <p class="price-tag">$1.000 CLP</p>
                 <a href="https://mpago.la/1tnNrRC" class="buy-button" target="_blank">Comprar Ahora</a>
+                <div class="coupon-container">
+                    <input type="text" class="coupon-input" placeholder="Ingresa tu cupón">
+                    <button class="apply-coupon" onclick="applyCoupon(this, 'querido santa.html')">Aplicar</button>
+                </div>
             </div>
         </div>
 
@@ -527,6 +560,10 @@
                 <h3 class="movie-title">Moana 2</h3>
                 <p class="price-tag">$1.000 CLP</p>
                 <a href="https://mpago.la/2DBZyaD" class="buy-button" target="_blank">Comprar Ahora</a>
+                <div class="coupon-container">
+                    <input type="text" class="coupon-input" placeholder="Ingresa tu cupón">
+                    <button class="apply-coupon" onclick="applyCoupon(this, 'moana2.html')">Aplicar</button>
+                </div>
             </div>
         </div>
 
@@ -634,6 +671,18 @@
 
         // Cierre automático después de 3 segundos
         setTimeout(closePopup, 3000);
+
+        function applyCoupon(button, moviePage) {
+            const couponInput = button.previousElementSibling;
+            const couponCode = couponInput.value.trim().toUpperCase();
+            
+            if (couponCode === 'TRUSTZONE PELIS') {
+                window.location.href = moviePage;
+            } else {
+                alert('Cupón no válido');
+                couponInput.value = '';
+            }
+        }
     </script>
 </body>
 </html>
