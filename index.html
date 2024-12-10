@@ -103,9 +103,9 @@
             justify-content: center;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                         url('images/www.trustzonestore.com (2).png');
-            background-attachment: fixed;
             background-position: center;
             background-size: cover;
+            background-repeat: no-repeat;
             color: #fff;
             text-align: center;
             position: relative;
@@ -637,7 +637,7 @@
             }
         }
 
-        /* Ajustes para pantallas muy peque��as */
+        /* Ajustes para pantallas muy pequeñas */
         @media screen and (max-width: 360px) {
             .navbar nav {
                 width: 230px;
@@ -803,6 +803,41 @@
                 font-size: 0.95rem;
                 margin: 8px 0;
                 padding: 0 15px;
+            }
+        }
+
+        /* Ajustes específicos para móviles */
+        @media screen and (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll; /* Cambiamos de fixed a scroll para móviles */
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                            url('images/www.trustzonestore.com (2).png');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                min-height: 100vh; /* Aseguramos que cubra toda la pantalla */
+                margin-top: 60px;
+                padding: 20px;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+                padding: 30px 20px;
+                width: calc(100% - 30px);
+                max-width: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                border-radius: 15px;
+            }
+        }
+
+        /* Ajustes adicionales para pantallas muy pequeñas */
+        @media screen and (max-width: 480px) {
+            .hero-section {
+                padding: 15px;
+            }
+
+            .hero-content {
+                padding: 25px 15px;
             }
         }
     </style>
