@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gran operación aventura mágica</title>
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #ff9900;
+            margin-bottom: 30px;
+        }
+        
+        .contenedor-video {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .reproductor {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        
+        .reproductor iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gran operación aventura mágica</h1>
+    
+    <div class="contenedor-video">
+        <div class="reproductor">
+            <iframe 
+                src="https://geo.dailymotion.com/player.html?video=x8mhhgo"
+                allowfullscreen
+                title="Dailymotion Video Player"
+                allow="web-share">
+            </iframe>
+        </div>
+    </div>
+</body>
+</html>
