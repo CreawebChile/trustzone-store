@@ -20,11 +20,11 @@
     <title>TrustZone Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
+          body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
@@ -47,6 +47,9 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .navbar .logo {
@@ -85,57 +88,200 @@
             font-size: 1.8em;
             cursor: pointer;
             color: #fff;
+            margin-right: 10px;
+            position: relative;
+            right: 0;
         }
 
         /* Hero Section */
         .hero-section {
-            height: 100vh;
-            background: url('images/www.trustzonestore.com (2).png') center center/cover no-repeat;
+            margin-top: 60px;
+            min-height: calc(100vh - 60px);
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('images/www.trustzonestore.com (2).png');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
             color: #fff;
-            padding: 100px 20px;
             text-align: center;
             position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
 
         .hero-content {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 800px;
-            text-align: center;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
         }
 
         .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
             font-weight: bold;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: clamp(1rem, 3vw, 1.2rem);
             line-height: 1.6;
+            margin-bottom: 35px;
+            font-weight: 300;
         }
 
-        .cta-button {
-            background-color: #ff9800;
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px auto;
+            width: 100%;
+            max-width: 300px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .cta-button.primary {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            min-width: 200px;
+            max-width: 100%;
+            background: linear-gradient(45deg, #ff9800, #ff5722);
             color: #fff;
-            padding: 12px 24px;
-            border-radius: 5px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 6px 30px -10px rgba(255, 152, 0, 0.4);
+            margin: 0 auto;
         }
 
-        .cta-button:hover {
-            background-color: #e68900;
-            transform: scale(1.05);
+        /* Efecto de brillo mejorado */
+        .cta-button.primary:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transition: 0.8s ease;
+        }
+
+        /* Efecto de ondas al hacer click */
+        .cta-button.primary .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: rippleEffect 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Efectos hover mejorados */
+        .cta-button.primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 40px -5px rgba(255, 152, 0, 0.6);
+            background: linear-gradient(45deg, #ff5722, #ff9800);
+            letter-spacing: 2px;
+        }
+
+        .cta-button.primary:hover:before {
+            left: 100%;
+        }
+
+        /* Efecto active mejorado */
+        .cta-button.primary:active {
+            transform: translateY(1px) scale(0.98);
+            box-shadow: 0 4px 20px -7px rgba(255, 152, 0, 0.5);
+        }
+
+        /* Animación de pulso mejorada */
+        @keyframes buttonPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 6px 30px -10px rgba(255, 152, 0, 0.4);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 12px 45px -5px rgba(255, 152, 0, 0.6);
+                letter-spacing: 2px;
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 6px 30px -10px rgba(255, 152, 0, 0.4);
+            }
+        }
+
+        /* Añadir ícono y su animación */
+        .cta-button.primary::after {
+            content: '→';
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button.primary:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* Ajustes para móvil */
+        @media screen and (max-width: 768px) {
+            .hero-buttons {
+                padding: 0 15px;
+                max-width: 280px;
+            }
+
+            .cta-button.primary {
+                min-width: 180px;
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Ajustes para pantallas muy pequeñas */
+        @media screen and (max-width: 360px) {
+            .hero-buttons {
+                padding: 0 10px;
+            }
+
+            .cta-button.primary {
+                min-width: 160px;
+                padding: 10px 25px;
+                font-size: 0.95rem;
+            }
+        }
+
+        .cta-button.secondary {
+            background: #25D366;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
         /* Welcome Section */
@@ -297,43 +443,366 @@
             color: #ff9800;
         }
 
+        /* Nuevos estilos para trust badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge i {
+            font-size: 1.5rem;
+            color: #ff9800;
+        }
+
+        .badge span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        /* Estilos para la nueva sección de características */
+        .features-section {
+            padding: clamp(40px, 6vw, 80px) 20px;
+            background: #f8f9fa;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: clamp(25px, 4vw, 35px);
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #ff9800;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
         @media screen and (max-width: 768px) {
             .navbar {
-                padding-right: 10px;
+                padding: 0 15px;
             }
 
-            .navbar nav ul {
-                display: none;
+            .navbar .logo {
+                font-size: 1.3rem;
+            }
+
+            .navbar .logo img {
+                height: 35px;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+                max-width: 100%;
+            }
+
+            .features-container {
+                padding: 0 10px;
+            }
+
+            .feature-card {
+                margin: 0 10px;
+            }
+
+            .welcome-section {
+                padding: 40px 15px;
+            }
+
+            .welcome-section h2 {
+                font-size: clamp(1.8rem, 4vw, 2.5rem);
+            }
+
+            .welcome-section p, 
+            .welcome-section ul li {
+                font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+                padding: 0 10px;
+            }
+
+            .hero-buttons {
+                padding: 0 20px;
+            }
+
+            .cta-button.primary {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero-buttons {
                 flex-direction: column;
-                gap: 10px;
-                background-color: #333;
-                position: absolute;
-                top: 60px;
-                right: 10px;
-                width: calc(100% - 20px);
-                max-width: 300px;
-                padding: 15px;
-                border-radius: 5px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-
-            .navbar nav.active ul {
-                display: flex;
-            }
-
-            .menu-icon {
-                display: block;
-                color: #fff;
-                margin-right: 10px;
-            }
-
-            .hero-section h1 {
-                font-size: 2rem;
+                width: 100%;
+                padding: 0 15px;
             }
 
             .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .trust-badges {
+                padding: 0 10px;
+            }
+
+            .badge {
+                min-width: 100px;
+            }
+        }
+
+        /* Estilos del menú móvil */
+        @media screen and (max-width: 768px) {
+            .menu-icon {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                z-index: 1001;
+                color: #fff;
+            }
+
+            .navbar nav {
+                display: none;
+                position: fixed;
+                top: 60px;
+                right: 0;
+                width: 250px;
+                height: auto;
+                max-height: calc(100vh - 60px);
+                background-color: #1c1c1c;
+                padding: 20px;
+                z-index: 1000;
+                box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+            }
+
+            .navbar nav.active {
+                display: block;
+            }
+
+            .navbar nav ul {
+                flex-direction: column;
+                gap: 15px;
+                padding: 0;
+                margin: 0;
+                background-color: transparent;
+            }
+
+            .navbar nav ul li a {
+                display: block;
+                padding: 12px 20px;
+                text-align: left;
+                font-size: 1.1rem;
+                color: #fff;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+
+            .navbar nav ul li a:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /* Ajustes para pantallas muy peque��as */
+        @media screen and (max-width: 360px) {
+            .navbar nav {
+                width: 230px;
+            }
+
+            .navbar nav ul li a {
+                padding: 10px 15px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Mejoras en las secciones de contenido */
+        .features-section,
+        .welcome-section,
+        .about-section,
+        .payment-section,
+        .contact-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .features-section,
+            .welcome-section,
+            .about-section,
+            .payment-section,
+            .contact-section {
+                padding: 40px 15px;
+            }
+        }
+
+        /* Mejoras para el hero section en móvil */
+        @media screen and (max-width: 768px) {
+            .hero-content {
+                padding: 25px 15px;
+                margin: 10px;
+                width: calc(100% - 20px);
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+                padding: 0 10px;
+            }
+
+            /* Mejoras en los badges */
+            .trust-badges {
+                display: flex;
+                justify-content: space-around;
+                gap: 15px;
+                margin-top: 25px;
+                padding: 0 10px;
+            }
+
+            .badge {
+                gap: 6px;
+            }
+
+            .badge i {
+                font-size: 1.3rem;
+            }
+
+            .badge span {
+                font-size: 0.75rem;
+            }
+
+            /* Mejora del botón */
+            .hero-buttons {
+                padding: 0 10px;
+                margin: 20px auto;
+            }
+
+            .cta-button.primary {
+                padding: 12px 25px;
+                font-size: 1rem;
+                border-radius: 8px;
+            }
+        }
+
+        /* Ajustes para pantallas muy pequeñas */
+        @media screen and (max-width: 360px) {
+            .hero-content {
+                padding: 20px 12px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .trust-badges {
+                gap: 10px;
+            }
+
+            .badge i {
+                font-size: 1.2rem;
+            }
+
+            .badge span {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Mejoras generales para móvil */
+        @media screen and (max-width: 768px) {
+            .features-section {
+                padding: 30px 15px;
+            }
+
+            .features-container {
+                gap: 15px;
+            }
+
+            .feature-card {
+                padding: 20px 15px;
+                margin: 0;
+            }
+
+            .feature-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+
+            .feature-card p {
                 font-size: 0.9rem;
-                padding: 10px 20px;
+            }
+
+            .feature-card i {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            /* Ajustes de secciones para móvil */
+            .welcome-section,
+            .about-section,
+            .payment-section,
+            .contact-section {
+                padding: 40px 15px;
+            }
+
+            .welcome-section h2,
+            .about-section h2,
+            .payment-section h2,
+            .contact-section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            .welcome-section p,
+            .about-section p,
+            .payment-section p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+
+            .welcome-section ul li {
+                font-size: 0.95rem;
+                margin: 8px 0;
+                padding: 0 15px;
             }
         }
     </style>
@@ -364,10 +833,10 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="index.html#home">Inicio</a></li>
+                    <li><a href="index.html#about">Sobre Nosotros</a></li>
                     <li><a href="productos.html">Productos</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="index.html#contact">Contacto</a></li>
                     <li><a href="Terminos-y-condiciones.html">Términos y Condiciones</a></li>
                 </ul>
             </nav>
@@ -378,9 +847,51 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="hero-content">
-            <h1>Bienvenido a TrustZone Store</h1>
-            <p>Tu tienda de confianza para productos de alta calidad.</p>
-            <a href="productos.html" class="cta-button">Explora nuestros productos</a>
+            <h1>Tu Destino Premium para Servicios Digitales</h1>
+            <p>Accede a las mejores herramientas digitales con precios exclusivos y soporte garantizado 24/7</p>
+            <div class="hero-buttons">
+                <a href="productos.html" class="cta-button primary">Ver Productos</a>
+            </div>
+            <div class="trust-badges">
+                <div class="badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Pago Seguro</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-headset"></i>
+                    <span>Soporte 24/7</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Garantía</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nueva sección de características destacadas -->
+    <section class="features-section">
+        <div class="features-container">
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Activación Inmediata</h3>
+                <p>Recibe acceso a tus productos en minutos después de tu compra</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-lock"></i>
+                <h3>100% Seguro</h3>
+                <p>Transacciones protegidas y datos encriptados</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Mejor Precio</h3>
+                <p>Garantizamos los precios más competitivos del mercado</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-heart"></i>
+                <h3>Satisfacción Garantizada</h3>
+                <p>Tu satisfacción es nuestra prioridad</p>
+            </div>
         </div>
     </section>
 
@@ -453,7 +964,64 @@
             const nav = document.querySelector('nav');
             nav.classList.toggle('active');
         }
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.querySelector('nav');
+                nav.classList.remove('active');
+            });
+        });
     </script>
     <script src="script.js"></script>
+    <script>
+        // Efecto de ondas mejorado
+        document.querySelector('.cta-button.primary').addEventListener('click', function(e) {
+            // Eliminar ripples anteriores
+            const ripples = document.getElementsByClassName('ripple');
+            while (ripples.length > 0) {
+                ripples[0].remove();
+            }
+            
+            // Crear nuevo ripple
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            
+            // Calcular posición y tamaño del ripple
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size/2;
+            const y = e.clientY - rect.top - size/2;
+            
+            // Establecer posición y tamaño del ripple
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            
+            // Añadir ripple al botón
+            this.appendChild(ripple);
+            
+            // Eliminar ripple después de la animación
+            setTimeout(() => {
+                ripple.remove();
+            }, 800);
+        });
+
+        // Animación inicial mejorada
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.querySelector('.cta-button.primary');
+            button.style.animation = 'buttonPulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite';
+            
+            // Detener animación al hover
+            button.addEventListener('mouseenter', function() {
+                this.style.animation = 'none';
+            });
+            
+            // Reanudar animación al quitar el hover
+            button.addEventListener('mouseleave', function() {
+                this.style.animation = 'buttonPulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite';
+            });
+        });
+    </script>
 </body>
 </html>
