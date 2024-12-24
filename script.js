@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 1,
                     title: "Canva Pro - 1 Año",
                     price: "$5.990",
+                    category: "software",
                     shortDescription: "Herramienta de diseño profesional premium",
                     image: "images/canvapro.jpg",
                     fullDescription: "Desbloquea todo el potencial creativo con Canva Pro por un año completo. Accede a más de 100 millones de fotos y elementos premium, más de 3000 fuentes exclusivas, y todas las herramientas profesionales.",
@@ -87,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 2,
                     title: "McAfee AntiVirus (2024) - 1 Año",
                     price: "$5.500",
+                    category: "software",
                     shortDescription: "Protección completa contra amenazas",
                     image: "images/Packshot_AntiVirusPlus.webp",
                     fullDescription: "Protección completa para tu dispositivo con McAfee AntiVirus Plus 2024. Incluye protección en tiempo real contra virus, malware, ransomware y amenazas zero-day.",
@@ -102,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 3,
                     title: "Anti Recoil para Mouse",
                     price: "$4.990",
+                    category: "gaming",
                     shortDescription: "Control preciso en juegos FPS",
                     image: "images/Antirecoil.jpg",
                     fullDescription: "Mejora tu precisión en juegos FPS con nuestro Anti Recoil para mouse. Software optimizado que ajusta automáticamente el control de retroceso.",
@@ -117,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 4,
                     title: "Macro para Mouse",
                     price: "$1.990",
+                    category: "gaming",
                     shortDescription: "Optimización de controles para gaming",
                     image: "images/macromouse.jpg",
                     fullDescription: "Optimiza tu gameplay con nuestra macro especializada para PC. Mejora significativamente tu precisión y tiempo de respuesta.",
@@ -132,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 5,
                     title: "Microsoft Office 365 Personal",
                     price: "$5.500",
+                    category: "software",
                     shortDescription: "Suite completa de productividad",
                     image: "images/microsftOffice.png",
                     fullDescription: "Acceso completo a Word, Excel, PowerPoint, Outlook y OneNote. 1TB de almacenamiento en OneDrive, actualizaciones automáticas y más.",
@@ -147,6 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 6,
                     title: "Express VPN - 1 Mes",
                     price: "$3.990",
+                    category: "software",
                     shortDescription: "VPN rápida y segura",
                     image: "images/expressvpn.jpg",
                     fullDescription: "Conexión ultra rápida con más de 160 ubicaciones en 94 países. Perfecto para streaming, gaming y navegación segura.",
@@ -162,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 7,
                     title: "ChatGPT Plus - 1 Mes",
                     price: "$4.990",
+                    category: "software",
                     shortDescription: "IA avanzada con GPT-o1",
                     image: "images/chatgpt.jpg",
                     fullDescription: "Acceso premium a GPT-4o, con funciones avanzadas como respuestas rápidas, plugins exclusivos y generación de imágenes.",
@@ -180,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 8,
                     title: "Amazon Prime Completo - 1 Mes",
                     price: "$3.990",
+                    category: "software",
                     shortDescription: "Streaming y beneficios Prime",
                     image: "images/prime video.png",
                     fullDescription: "Incluye Prime Video, Amazon Music con 100 millones de canciones, envíos Prime gratis y acceso a Prime Gaming.",
@@ -195,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 9,
                     title: "1000 Seguidores TikTok",
                     price: "$9.990",
+                    category: "social media",
                     shortDescription: "Impulsa tu presencia en TikTok",
                     image: "images/seguidores-tiktok.webp",
                     fullDescription: "1.000 seguidores reales y activos para TikTok. Entrega gradual y natural.",
@@ -210,6 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 10,
                     title: "Combo McAfee + Canva Pro",
                     price: "$7.500",
+                    category: "software",
                     shortDescription: "Seguridad y creatividad en uno",
                     image: "images/Promo-canva+mcafee.png",
                     fullDescription: "Paquete especial con McAfee AntiVirus 2024 y Canva Pro por 1 año. Ahorra más del 30% comprando juntos.",
@@ -225,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 11,
                     title: "YouTube Premium - 1 Mes",
                     price: "$3.990",
+                    category: "software",
                     shortDescription: "YouTube sin interrupciones",
                     image: "images/youtubepremium.jpg",
                     fullDescription: "Experiencia completa sin anuncios, reproducción en segundo plano y descargas offline.",
@@ -240,6 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 12,
                     title: "1000 Seguidores Twitch",
                     price: "$9.990",
+                    category: "social media",
                     shortDescription: "Impulsa tu canal de streaming",
                     image: "images/seguidorestwitch.jpg",
                     fullDescription: "Potencia tu canal de Twitch con 1.000 seguidores orgánicos y alcanza el estatus de afiliado.",
@@ -255,6 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 13,
                     title: "Spotify Premium - 3 Meses",
                     price: "$4.990",
+                    category: "software",
                     shortDescription: "Música premium sin límites",
                     image: "images/spotify.png",
                     fullDescription: "Acceso premium a Spotify con más de 82 millones de canciones en alta calidad, sin anuncios y con modo offline.",
@@ -270,6 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 14,
                     title: "1000 Seguidores Instagram",
                     price: "$9.990",
+                    category: "social media",
                     shortDescription: "Impulsa tu presencia en Instagram",
                     image: "images/seguidores instagram.png",
                     fullDescription: "1.000 seguidores reales y activos para Instagram. Entrega gradual y natural para mantener la seguridad de tu cuenta.",
@@ -289,9 +303,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const backButton = document.getElementById('backButton');
 
             // Create and display product cards
-            function displayProducts() {
-                productsGrid.innerHTML = products.map(product => `
-                    <div class="product-card" data-id="${product.id}">
+            function displayProducts(productsToShow = products) {
+                productsGrid.innerHTML = productsToShow.map(product => `
+                    <div class="product-card" data-id="${product.id}" data-category="${product.category}">
                         <img src="${product.image}" alt="${product.title}">
                         <div class="product-info">
                             <h3>${product.title}</h3>
@@ -505,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
-                const category = categoryFilter ? categoryFilter.value : '';
+                const selectedCategory = categoryFilter ? categoryFilter.value : '';
                 const minPrice = minPriceInput && minPriceInput.value ? parseFloat(minPriceInput.value) : 0;
                 const maxPrice = maxPriceInput && maxPriceInput.value ? parseFloat(maxPriceInput.value) : Infinity;
                 const sortBy = sortBySelect ? sortBySelect.value : 'relevance';
@@ -515,7 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const matchesSearch = searchTerm === '' || 
                         product.title.toLowerCase().includes(searchTerm) ||
                         product.shortDescription.toLowerCase().includes(searchTerm);
-                    const matchesCategory = category === '' || product.category === category;
+                    const matchesCategory = selectedCategory === '' || product.category === selectedCategory;
                     const matchesPrice = price >= minPrice && price <= maxPrice;
 
                     return matchesSearch && matchesCategory && matchesPrice;
@@ -538,27 +552,59 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
+                // Update products display
                 displayFilteredProducts(filteredProducts);
+
+                // Update filter count
+                updateFilterCount(filteredProducts.length);
             }
 
-            function displayFilteredProducts(filteredProducts) {
-                productsGrid.innerHTML = filteredProducts.length > 0 
-                    ? filteredProducts.map(product => `
-                        <div class="product-card" data-id="${product.id}">
-                            <img src="${product.image}" alt="${product.title}">
-                            <div class="product-info">
-                                <h3>${product.title}</h3>
-                                <p class="price" data-price="${product.price.replace('$', '').replace('.', '')}">${product.price}</p>
-                                <p class="description">${product.shortDescription}</p>
-                            </div>
-                        </div>
-                    `).join('')
-                    : '<div class="no-results">No se encontraron productos que coincidan con los criterios de búsqueda.</div>';
+            // Add function to update filter count
+            function updateFilterCount(count) {
+                const countElement = document.getElementById('filterCount');
+                if (countElement) {
+                    countElement.textContent = `${count} producto${count !== 1 ? 's' : ''} encontrado${count !== 1 ? 's' : ''}`;
+                }
+            }
 
-                // Reattach click listeners
-                document.querySelectorAll('.product-card').forEach(card => {
-                    card.addEventListener('click', () => showProductDetail(card.dataset.id));
+            // Update clear filters functionality
+            if (clearFiltersBtn) {
+                clearFiltersBtn.addEventListener('click', () => {
+                    if (searchInput) searchInput.value = '';
+                    if (categoryFilter) categoryFilter.value = '';
+                    if (minPriceInput) minPriceInput.value = '';
+                    if (maxPriceInput) maxPriceInput.value = '';
+                    if (sortBySelect) sortBySelect.value = 'relevance';
+                    filterProducts();
                 });
+            }
+
+            // Add animation for filtered products
+            function displayFilteredProducts(filteredProducts) {
+                productsGrid.style.opacity = '0';
+                
+                setTimeout(() => {
+                    productsGrid.innerHTML = filteredProducts.length > 0 
+                        ? filteredProducts.map(product => `
+                            <div class="product-card" data-id="${product.id}" data-category="${product.category}">
+                                <img src="${product.image}" alt="${product.title}">
+                                <div class="product-info">
+                                    <h3>${product.title}</h3>
+                                    <p class="price" data-price="${product.price.replace('$', '').replace('.', '')}">${product.price}</p>
+                                    <p class="description">${product.shortDescription}</p>
+                                </div>
+                            </div>
+                        `).join('')
+                        : '<div class="no-results">No se encontraron productos que coincidan con los criterios de búsqueda.</div>';
+
+                    // Reattach click listeners
+                    document.querySelectorAll('.product-card').forEach(card => {
+                        card.addEventListener('click', () => showProductDetail(card.dataset.id));
+                    });
+
+                    // Fade in the products
+                    productsGrid.style.opacity = '1';
+                }, 300);
             }
 
             // Event listeners for filters with validation
