@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RLGHERD56W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RLGHERD56W');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - TrustZone Store | Soporte y Ventas</title>
+    <meta name="description" content="Contáctanos para soporte técnico o consultas de ventas. Atención personalizada vía WhatsApp y formulario de contacto en TrustZone Store.">
+    <meta name="keywords" content="contacto, soporte técnico, ventas, atención al cliente, WhatsApp, TrustZone Store">
+    
+    <link rel="canonical" href="https://trustzonestore.com/contacto.html">
+    
+    <meta property="og:title" content="Contacto - TrustZone Store | Soporte y Ventas">
+    <meta property="og:description" content="¿Necesitas ayuda? Contacta con nuestro equipo de soporte o ventas para una atención personalizada.">
+    <meta property="og:image" content="https://trustzonestore.com/logo/logotrustzonestore.svg">
+    <meta property="og:url" content="https://trustzonestore.com/contacto.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <object data="logo/logotrustzonestore.svg" type="image/svg+xml" width="350" height="auto" title="TrustZone Store Logo">
+                <img src="logo/logotrustzonestore.svg" alt="Trustzone Store Logo" width="350" height="auto">
+            </object>
+        </div>
+        <button class="hamburger" aria-label="Menú principal" aria-controls="navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav" id="navigation" role="navigation">
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="FQ.html">Preguntas Frecuentes</a></li>
+                <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">¿Cómo podemos ayudarte?</h2>
+                
+                <!-- Options Container -->
+                <div class="contact-options" id="contactOptions">
+                    <div class="option-card" data-type="support">
+                        <div class="option-icon">🛠️</div>
+                        <h3>Soporte Técnico</h3>
+                        <p>¿Tienes problemas con un producto? Contáctanos y te ayudaremos.</p>
+                        <button class="option-button">Contactar Soporte</button>
+                    </div>
+                    
+                    <div class="option-card" data-type="sales">
+                        <div class="option-icon">💳</div>
+                        <h3>Ventas</h3>
+                        <p>¿Interesado en nuestros productos? Háblanos por WhatsApp.</p>
+                        <button class="option-button">Contactar Ventas</button>
+                    </div>
+                </div>
+
+                <!-- Support Form Container -->
+                <div class="form-container" id="supportForm" style="display: none;">
+                    <button class="back-to-options">← Volver a opciones</button>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <p class="contact-description">Este formulario está destinado exclusivamente para consultas técnicas, dudas sobre el servicio o problemas con productos adquiridos. Nuestro equipo especializado responderá a tu consulta vía email en un plazo máximo de 24 horas hábiles.</p>
+                            
+                            <div class="contact-notice">
+                                <p><strong>Nota importante:</strong> Si envías consultas técnicas por WhatsApp, serás redirigido a este formulario, ya que nuestro equipo de WhatsApp se dedica exclusivamente a ventas. Para una atención más eficiente, utiliza este medio para todas tus consultas técnicas.</p>
+                            </div>
+                        </div>
+                        
+                        <form id="contact-form" action="https://formspree.io/f/mvgorjle" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo</label>
+                                <input type="text" id="name" name="name" placeholder="Ingresa tu nombre completo" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <input type="text" id="subject" name="subject" placeholder="Ingresa el asunto" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-button">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sales Form Container -->
+                <div class="form-container" id="salesForm" style="display: none;">
+                    <button class="back-to-options">← Volver a opciones</button>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <p class="contact-description">Complete el formulario para generar un mensaje directo a nuestro equipo de ventas vía WhatsApp.</p>
+                        </div>
+                        
+                        <form id="whatsappForm" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="salesName">Nombre Completo</label>
+                                <input type="text" id="salesName" required placeholder="Ingresa tu nombre">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="productSelect">Producto de Interés</label>
+                                <select id="productSelect" required>
+                                    <option value="">Selecciona un producto</option>
+                                    <option value="Canva Pro">Canva Pro - 1 Año</option>
+                                    <option value="McAfee AntiVirus">McAfee AntiVirus (2024) - 1 Año</option>
+                                    <option value="Anti Recoil">Anti Recoil para Mouse</option>
+                                    <option value="Macro Mouse">Macro para Mouse</option>
+                                    <option value="Microsoft Office">Microsoft Office 365 Personal</option>
+                                    <option value="Express VPN">Express VPN - 1 Mes</option>
+                                    <option value="ChatGPT Plus">ChatGPT Plus - 1 Mes</option>
+                                    <option value="Amazon Prime">Amazon Prime Completo - 1 Mes</option>
+                                    <option value="Seguidores TikTok">1000 Seguidores TikTok</option>
+                                    <option value="Combo McAfee + Canva">Combo McAfee + Canva Pro</option>
+                                    <option value="YouTube Premium">YouTube Premium - 1 Mes</option>
+                                    <option value="Seguidores Twitch">1000 Seguidores Twitch</option>
+                                    <option value="Spotify Premium">Spotify Premium - 3 Meses</option>
+                                    <option value="Seguidores Instagram">1000 Seguidores Instagram</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="salesMessage">Mensaje</label>
+                                <textarea id="salesMessage" rows="4" required placeholder="Escribe tus preguntas o detalles adicionales"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="whatsapp-button" onclick="generateWhatsAppLink()">
+                                Contactar por WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="payment-icons">
+                <img src="icons/Mastercard.png" alt="Mastercard" class="payment-icon">
+                <img src="icons/Mercadopago.png" alt="Mercado Pago" class="payment-icon">
+                <img src="icons/Paypal.png" alt="PayPal" class="payment-icon">
+                <img src="icons/visa.png" alt="Visa" class="payment-icon">
+            </div>
+            <p>&copy; 2024 TrustZone Store. Todos los derechos reservados.</p>
+            <p class="credits">Sitio web creado por <a href="https://creawebchile.cl" target="_blank" rel="noopener">creawebchile.cl</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

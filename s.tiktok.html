@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustZone Store - Seguidores TikTok</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <object data="logo/logotrustzonestore.svg" type="image/svg+xml" width="350" height="auto" title="TrustZone Store Logo">
+                <img src="logo/logotrustzonestore.svg" alt="Trustzone Store Logo" width="350" height="auto">
+            </object>
+        </div>
+        <button class="hamburger" aria-label="Menú principal" aria-controls="navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav" id="navigation" role="navigation">
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="FQ.html">Preguntas Frecuentes</a></li>
+                <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+        <section class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Solicitar Seguidores para TikTok</h2>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p class="contact-description">Complete el formulario para solicitar seguidores para su cuenta de TikTok.</p>
+                        
+                        <div class="contact-notice">
+                            <p><strong>Instrucciones importantes:</strong></p>
+                            <ul style="margin-top: 10px;">
+                                <li>Su cuenta de TikTok debe estar configurada como pública.</li>
+                                <li>No cambiar el nombre de usuario hasta que se complete el proceso.</li>
+                                <li>El proceso puede tardar entre 24 a 72 horas en completarse.</li>
+                                <li>Recibirá una notificación por correo cuando iniciemos el proceso.</li>
+                            </ul>
+                        </div>
+
+                        <div class="example-notice">
+                            <p><strong>Ejemplo de enlace válido:</strong><br>
+                            <span class="example-link">https://www.tiktok.com/@trustzone_store</span></p>
+                        </div>
+                    </div>
+                    
+                    <form id="contact-form" action="https://formspree.io/f/mvgorjle" method="POST">
+                        <input type="hidden" name="subject" value="Seguidores TikTok">
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="ejemplo@correo.com"
+                                required
+                                oninvalid="this.setCustomValidity('Por favor, ingrese un correo electrónico válido')"
+                                oninput="this.setCustomValidity('')"
+                            >
+                            <small class="form-hint">Recibirá notificaciones sobre su pedido en este correo</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tiktok-link">Enlace de Perfil de TikTok</label>
+                            <input 
+                                type="url" 
+                                id="tiktok-link" 
+                                name="tiktok-link" 
+                                placeholder="https://www.tiktok.com/@su_usuario"
+                                pattern="https?:\/\/(www\.)?tiktok\.com\/@.*"
+                                required
+                                oninvalid="this.setCustomValidity('Por favor, ingrese un enlace válido de TikTok')"
+                                oninput="this.setCustomValidity('')"
+                            >
+                            <small class="form-hint">Debe comenzar con https://www.tiktok.com/@</small>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Enviar Solicitud</button>
+                    </form>
+
+                    <div id="confirmation-message" style="display: none;">
+                        <p>Su solicitud ha sido recibida. Recibirá un correo cuando iniciemos el proceso de envío de seguidores. 
+                           Recuerde que el proceso puede tardar entre 24 a 72 horas en completarse.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="payment-icons">
+                <img src="icons/Mastercard.png" alt="Mastercard" class="payment-icon">
+                <img src="icons/Mercadopago.png" alt="Mercado Pago" class="payment-icon">
+                <img src="icons/Paypal.png" alt="PayPal" class="payment-icon">
+                <img src="icons/visa.png" alt="Visa" class="payment-icon">
+            </div>
+            <p>&copy; 2024 TrustZone Store. Todos los derechos reservados.</p>
+            <p class="credits">Sitio web creado por <a href="https://creawebchile.cl" target="_blank" rel="noopener">creawebchile.cl</a></p>
+        </div>
+    </footer>
+
+    <style>
+        /* ...existing styles... */
+    </style>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailInput = document.getElementById('email');
+            const linkInput = document.getElementById('tiktok-link');
+            
+            // Validar email
+            if (!emailInput.value || !emailInput.checkValidity()) {
+                emailInput.setCustomValidity('Por favor, ingrese un correo electrónico válido');
+                emailInput.reportValidity();
+                return;
+            }
+            
+            // Validar enlace de TikTok
+            if (!linkInput.value.includes('tiktok.com/@')) {
+                linkInput.setCustomValidity('Por favor, ingrese un enlace válido de TikTok que comience con @');
+                linkInput.reportValidity();
+                return;
+            }
+
+            // Si todo es válido, enviar el formulario
+            emailInput.setCustomValidity('');
+            linkInput.setCustomValidity('');
+            
+            // Proceder con el envío
+            this.submit();
+            
+            // Mostrar mensaje de confirmación
+            setTimeout(() => {
+                document.getElementById('confirmation-message').style.display = 'block';
+                document.getElementById('contact-form').style.display = 'none';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

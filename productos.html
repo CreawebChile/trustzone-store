@@ -12,701 +12,134 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustZone Store</title>
+    <title>Productos y Servicios Premium - TrustZone Store</title>
+    <meta name="description" content="Explora nuestra selección de servicios digitales premium, software gaming, antivirus y más. Encuentra las mejores ofertas en TrustZone Store.">
+    <meta name="keywords" content="productos digitales, servicios premium, software gaming, antivirus, Canva Pro, YouTube Premium, Spotify Premium, seguidores redes sociales">
     
-    <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
-    
-    <!-- Estilos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="css/shared-styles.css">
-    <link rel="stylesheet" type="text/css" href="css/productos-styles.css">
-    <link rel="stylesheet" type="text/css" href="css/animations.css">
-    
-    <!-- Scripts -->
-    <script src="js/shared.js"></script>
-    
-    <!-- SEO Metatags -->
-    <meta name="description" content="Catálogo de productos digitales premium a precios accesibles. Canva Pro anual, McAfee Antivirus, ChatGPT Plus, ExpressVPN, servicios de redes sociales y más.">
-    <meta name="keywords" content="Canva Pro barato, McAfee Antivirus oferta, ChatGPT Plus cuenta, ExpressVPN premium, seguidores Instagram, seguidores TikTok, YouTube Premium, Spotify Premium, Amazon Prime">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://trustzonestore.com/productos.html">
-    <meta property="og:title" content="Productos Digitales Premium - TrustZone Store">
-    <meta property="og:description" content="Encuentra las mejores ofertas en productos digitales: Canva Pro anual desde $5.990, McAfee Antivirus, ChatGPT Plus, ExpressVPN y más.">
-    <meta property="og:image" content="images/Logotipo Tecnología Azul (2).png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://trustzonestore.com/productos.html">
-    <meta property="twitter:title" content="Productos Digitales Premium - TrustZone Store">
-    <meta property="twitter:description" content="Encuentra las mejores ofertas en productos digitales: Canva Pro anual desde $5.990, McAfee Antivirus, ChatGPT Plus, ExpressVPN y más.">
-    <meta property="twitter:image" content="images/Logotipo Tecnología Azul (2).png">
-    
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://trustzonestore.com/productos.html">
-
-    <style>
-        .share-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 99;
-        }
-
-        .share-trigger {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #e50914, #ff3019);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-
-        .share-buttons {
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            background: rgba(0, 0, 0, 0.9);
-            border-radius: 10px;
-            padding: 10px;
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .share-buttons.active {
-            display: flex;
-        }
-
-        .share-button {
-            display: flex;
-            align-items: center;
-            padding: 10px 15px;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            gap: 10px;
-            white-space: nowrap;
-        }
-
-        .share-button i {
-            width: 20px;
-            text-align: center;
-        }
-
-        .share-whatsapp { background: #25D366; }
-        .share-facebook { background: #1877F2; }
-        .share-instagram { background: #E4405F; }
-        .share-twitter { background: #1DA1F2; }
-        .share-email { background: #EA4335; }
-        .share-telegram { background: #0088cc; }
-        .share-button.copy-link { background: #666; }
-        .share-button.copy-link.copied { background: #28a745; }
-
-        .share-button:hover {
-            transform: translateX(-5px);
-            filter: brightness(1.1);
-        }
-
-        .toast-notification {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            background: rgba(40, 167, 69, 0.9);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 5px;
-            display: none;
-            animation: fadeInOut 2s ease;
-            z-index: 1000;
-        }
-
-        @keyframes fadeInOut {
-            0% { opacity: 0; transform: translateY(20px); }
-            20% { opacity: 1; transform: translateY(0); }
-            80% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-20px); }
-        }
-
-        @media (max-width: 768px) {
-            .share-container {
-                bottom: 10px;
-                right: 10px;
-            }
-
-            .share-trigger {
-                width: 50px;
-                height: 50px;
-            }
-
-            .share-buttons {
-                bottom: 60px;
-                right: 0;
-            }
-
-            .share-button {
-                padding: 8px 12px;
-                font-size: 0.9em;
-            }
-        }
-
-        /* Ajustar el color del logo para el tema claro */
-        [data-theme="default"] .navbar .logo {
-            color: var(--text-color);
-        }
-
-        /* Ajustar colores de los botones para mejor contraste */
-        .buy-button, .watch-button {
-            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
-            color: #ffffff;
-        }
-    </style>
+    
+    <meta property="og:title" content="Productos y Servicios Premium - TrustZone Store">
+    <meta property="og:description" content="Descubre nuestra amplia gama de servicios digitales y software premium a precios accesibles.">
+    <meta property="og:image" content="https://trustzonestore.com/logo/logotrustzonestore.svg">
+    <meta property="og:url" content="https://trustzonestore.com/productos.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-        <div class="navbar">
-            <a href="index.html" class="logo">
-                <img src="images/Logotipo%20Tecnolog%C3%ADa%20Azul%20(2).png" alt="Logo de TrustZone">
-                TrustZone Store
-            </a>
-            <nav>
-                <ul class="hidden" id="nav-menu">
-                    <li><a href="index.html#home">Inicio</a></li>
-                    <li><a href="index.html#about">Sobre Nosotros</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="index.html#contact">Contacto</a></li>
-                    <li><a href="Terminos-y-condiciones.html">Términos y Condiciones</a></li>
-                </ul>
-            </nav>
-            <div class="menu-icon" onclick="toggleMenu()" aria-expanded="false"><i class="fas fa-bars"></i></div>
+    <header class="header">
+        <div class="logo">
+            <object data="logo/logotrustzonestore.svg" type="image/svg+xml" width="350" height="auto" title="TrustZone Store Logo">
+                <img src="logo/logotrustzonestore.svg" alt="Trustzone Store Logo" width="350" height="auto">
+            </object>
         </div>
+        <button class="hamburger" aria-label="Menú principal" aria-controls="navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav" id="navigation" role="navigation">
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="FQ.html">Preguntas Frecuentes</a></li>
+                <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="floating-elements">
-        <i class="floating-icon fas fa-gift"></i>
-        <i class="floating-icon fas fa-tree"></i>
-        <i class="floating-icon fas fa-star"></i>
-        <i class="floating-icon fas fa-snowflake"></i>
-    </div>
-
-    <div class="santa-container">
-        <div class="santa">
-            <i class="fas fa-sleigh"></i>
-            <i class="fas fa-user-alt" style="color: #ff0000; margin-left: -15px;"></i>
-        </div>
-    </div>
-
-    <main>
-        <!-- Barra de búsqueda y filtros -->
-        <div class="search-bar">
-            <input type="text" id="search" placeholder="Buscar productos..." aria-label="Buscar productos">
-            <select id="filter-category" aria-label="Filtrar por categoría">
-                <option value="">Todas las Categorías</option>
-                <option value="productividad">Productividad</option>
-                <option value="diseño">Diseño</option>
-                <option value="redes">Redes Sociales</option>
-                <option value="seguridad">Seguridad</option>
-                <option value="streaming">Streaming</option>
-                <option value="musica">Música</option>
-                <option value="vpn">VPN</option>
-                <option value="gaming">Gaming</option>
-                <option value="oferta">Ofertas</option>
-            </select>
-            <select id="filter-price" aria-label="Filtrar por precio">
-                <option value="">Todos los Precios</option>
-                <option value="low">Hasta $5.000</option>
-                <option value="high">Más de $5.000</option>
-            </select>
-            <select id="filter-best-sellers" aria-label="Ordenar por">
-                <option value="">Ordenar por</option>
-                <option value="best">Más Vendidos</option>
-            </select>
-            <select id="currency-selector" aria-label="Seleccionar moneda">
-                <option value="CLP">🇨🇱 CLP</option>
-                <option value="USD">🇺🇸 USD</option>
-                <option value="EUR">🇪🇺 EUR</option>
-                <option value="GBP">🇬🇧 GBP</option>
-                <option value="ARS">🇦🇷 ARS</option>
-                <option value="MXN">🇲🇽 MXN</option>
-            </select>
-        </div>
-
-        <!-- Grid de productos -->
-        <div class="product-grid" id="product-grid">
-            <!-- Productos con MercadoPago primero -->
-            <div class="product-card" data-category="diseño" data-price="5990" data-best-seller="true" data-description="Desbloquea todo el potencial creativo con Canva Pro por un año completo. Accede a más de 100 millones de fotos y elementos premium, más de 3000 fuentes exclusivas, y todas las herramientas profesionales. Incluye la función de eliminar fondos, redimensionar diseños y acceso a contenido animado. ¡Con posibilidad de mantenerlo para siempre! La cuenta se entrega con acceso inmediato y garantizado.">
-                <div class="product-image" style="background-image: url('images/canvapro.jpg');">
-                    <span class="product-tag tag-best-seller">Más Vendido</span>
+    <main class="products-container" style="margin-top: 80px;">
+        <section class="search-filter-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar productos...">
+                    <i class="search-icon">🔍</i>
                 </div>
-                <div class="product-details">
-                    <h3 class="product-title">Canva Pro 1 año</h3>
-                    <p class="product-price">$5.990 CLP</p>
-                    <div class="payment-button">
-                        <script src="https://www.mercadopago.cl/integrations/v1/web-payment-checkout.js"
-                            data-preference-id="500424967-fbea6445-7810-400c-ac1a-a63858afc276" 
-                            data-source="button">
-                        </script>
+                <div class="suggestions-container" id="searchSuggestions"></div>
+            </div>
+            
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="categoryFilter">Categoría</label>
+                    <select id="categoryFilter">
+                        <option value="">Todas las categorías</option>
+                        <option value="software">Software</option>
+                        <option value="streaming">Streaming</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="redes">Redes Sociales</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="priceRange">Rango de precio</label>
+                    <div class="price-inputs">
+                        <input type="number" id="minPrice" placeholder="Mín" min="0">
+                        <span>-</span>
+                        <input type="number" id="maxPrice" placeholder="Máx" min="0">
                     </div>
                 </div>
-            </div>
 
-            <div class="product-card" data-category="seguridad" data-price="5500" data-best-seller="true" data-description="Protección completa para tu dispositivo con McAfee AntiVirus Plus 2024. Incluye protección en tiempo real contra virus, malware, ransomware y amenazas zero-day. Navegación web segura, gestor de contraseñas premium y optimización del rendimiento del sistema. Licencia original por 1 año con actualizaciones automáticas.">
-                <div class="product-image" style="background-image: url('images/Packshot_AntiVirusPlus.webp');">
-                    <span class="product-tag tag-best-seller">Más Vendido</span>
+                <div class="filter-group">
+                    <label for="sortBy">Ordenar por</label>
+                    <select id="sortBy">
+                        <option value="relevance">Relevancia</option>
+                        <option value="price-low">Precio: Menor a Mayor</option>
+                        <option value="price-high">Precio: Mayor a Menor</option>
+                        <option value="name">Nombre</option>
+                    </select>
                 </div>
-                <div class="product-details">
-                    <h3 class="product-title">McAfee AntiVirus (2024) - 1 Año</h3>
-                    <p class="product-price">$5.500 CLP</p>
-                    <div class="payment-button">
-                        <script src="https://www.mercadopago.cl/integrations/v1/web-payment-checkout.js"
-                            data-preference-id="500424967-8782c48b-8008-461e-aa3f-6abffec72cc2" 
-                            data-source="button">
-                        </script>
-                    </div>
-                </div>
-            </div>
 
-            <div class="product-card" data-category="gaming" data-price="4990" data-best-seller="false" data-description="Mejora tu precisión en juegos FPS con nuestro Anti Recoil para mouse. Software optimizado que ajusta automáticamente el control de retroceso, compatible con todos los juegos de disparos populares. 100% seguro y no detectable, ya que funciona a nivel de hardware. Incluye diferentes perfiles personalizables y soporte técnico.">
-                <div class="product-image" style="background-image: url('images/Antirecoil.jpg');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">Anti Recoil para Mouse</h3>
-                    <p class="product-price">$4.990 CLP</p>
-                    <div class="payment-button">
-                        <script src="https://www.mercadopago.cl/integrations/v1/web-payment-checkout.js"
-                            data-preference-id="500424967-ef5216b4-bba2-49f5-b584-0b53ac3b130e" 
-                            data-source="button">
-                        </script>
-                    </div>
-                </div>
+                <button id="clearFilters" class="clear-filters-btn">Limpiar filtros</button>
             </div>
+        </section>
 
-            <div class="product-card" data-category="gaming" data-price="1990" data-best-seller="false" data-description="Optimiza tu gameplay con nuestra macro especializada para PC. Mejora significativamente tu precisión y tiempo de respuesta en juegos como Free Fire. Incluye configuraciones predefinidas, ajustes personalizables y actualizaciones gratuitas. Fácil de instalar y usar, con tutorial detallado incluido.">
-                <div class="product-image" style="background-image: url('images/macromouse.jpg');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">Macro para Mouse</h3>
-                    <p class="product-price">$1.990 CLP</p>
-                    <div class="payment-button">
-                        <script src="https://www.mercadopago.cl/integrations/v1/web-payment-checkout.js"
-                            data-preference-id="500424967-a08fc9ab-3e30-4097-8779-1f30dea96258" 
-                            data-source="button">
-                        </script>
-                    </div>
+        <!-- Removed currency-selector and errorMessage divs -->
+
+        <section class="products-grid" id="productsGrid">
+            <!-- Products will be dynamically loaded here -->
+            <div class="product-card" data-id="${product.id}">
+                <div class="image-placeholder">
+                    <img src="${product.image}" 
+                         alt="${product.title}"
+                         width="300"
+                         height="200">
+                </div>
+                <!-- ...rest of product card code... -->
+            </div>
+        </section>
+
+        <section class="product-detail" id="productDetail">
+            <div class="detail-container">
+                <button class="back-button" id="backButton">
+                    <span class="back-icon">&larr;</span> Volver a Productos
+                </button>
+                <div class="detail-content">
+                    <!-- Product details will be dynamically loaded here -->
                 </div>
             </div>
-
-            <!-- Productos con WhatsApp -->
-            <div class="product-card" data-category="productividad" data-price="5500" data-best-seller="false" data-description="Microsoft Office 365 Personal con licencia original por 1 año. Incluye acceso completo a Word, Excel, PowerPoint, Outlook y OneNote en su última versión. 1TB de almacenamiento en OneDrive, actualizaciones automáticas y uso en múltiples dispositivos. Ideal para trabajo, estudio o uso personal.">
-                <div class="product-image" style="background-image: url('images/microsftOffice.png');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">Microsoft Office 365 Personal por 1 año</h3>
-                    <p class="product-price">$5.500 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Office%20365%20Personal%201%20año" class="buy-button">
-                        <i class="fab fa-whatsapp"></i>
-                        Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Agregar después del último producto en el product-grid -->
-
-            <div class="product-card" data-category="seguridad,vpn" data-price="3990" data-best-seller="false" data-description="Express VPN Premium: La mejor VPN del mercado. Conexión ultra rápida, más de 160 ubicaciones en 94 países. Perfecto para streaming, gaming y navegación segura. Desbloquea contenido geo-restringido en Netflix, Disney+, HBO y más. Incluye política de no registros, encriptación de nivel militar y soporte 24/7. Válido para 5 dispositivos simultáneos.">
-                <div class="product-image" style="background-image: url('images/expressvpn.jpg');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">Express VPN 1 mes</h3>
-                    <p class="product-price">$3.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Express%20VPN%201%20mes" class="buy-button">
-                        <i class="fab fa-whatsapp"></i>
-                        Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="productividad" data-price="4990" data-best-seller="true" data-description="Acceso Premium a ChatGPT Plus por 1 mes. Disfruta de GPT-4, el modelo de lenguaje más avanzado de OpenAI. Incluye todas las funciones premium: respuestas más rápidas y precisas, acceso prioritario en horas pico, plugins exclusivos, navegación web en tiempo real, análisis de imágenes con GPT-4V (Visual), y DALL-E 3 para generación de imágenes de alta calidad. Ideal para trabajo, estudio, programación y desarrollo de proyectos. Soporte técnico incluido durante todo el período.">
-                <div class="product-image" style="background-image: url('images/chatgpt.jpg');">
-                    <span class="product-tag tag-best-seller">Más Vendido</span>
-                </div>
-                <div class="product-details">
-                    <h3 class="product-title">ChatGPT 1 mes (cuenta compartida)</h3>
-                    <p class="product-price">$4.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20ChatGPT%20Plus%201%20mes" class="buy-button">
-                        <i class="fab fa-whatsapp"></i>
-                        Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="streaming" data-price="3990" data-best-seller="false" data-description="Paquete completo de Amazon Prime: Incluye Prime Video con miles de películas y series exclusivas en HD, Amazon Music con más de 100 millones de canciones sin anuncios, envíos Prime gratis y acceso a Prime Gaming. Contenido original de Amazon y estrenos exclusivos. Cuenta personal con acceso garantizado por 1 mes.">
-                <div class="product-image" style="background-image: url('images/prime video.png');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">Amazon Prime Video + Amazon Music 1 mes</h3>
-                    <p class="product-price">$3.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Amazon%20Prime%20Video%20y%20Amazon%20Music" class="buy-button">
-                        <i class="fab fa-whatsapp"></i>
-                        Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="true" data-description="Impulsa tu presencia en TikTok con 1.000 seguidores reales y activos. Entrega gradual y natural para mayor seguridad de tu cuenta. Incluye garantía de reposición, seguidores de calidad con avatares y biografías. Ideal para creadores de contenido, influencers y marcas. Entrega en 24-72 horas.">
-                <div class="product-image" style="background-image: url('images/seguidores-tiktok.webp');">
-                    <span class="product-tag tag-best-seller">Más Vendido</span>
-                </div>
-                <div class="product-details">
-                    <h3 class="product-title">Seguidores de TikTok (1.000 seguidores)</h3>
-                    <p class="product-price">$9.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20los%20Seguidores%20de%20TikTok" class="buy-button">
-                        <i class="fab fa-whatsapp"></i>
-                        Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="oferta" data-price="7500" data-best-seller="false" data-description="¡Paquete especial! Combina la seguridad premium de McAfee AntiVirus 2024 con el poder creativo de Canva Pro por 1 año. Protección completa para tu dispositivo y acceso a todas las herramientas de diseño profesional. Ahorra más de 30% comparado con la compra individual. Licencias originales con soporte técnico incluido.">
-                <div class="product-image" style="background-image: url('images/Promo-canva+mcafee.png');">
-                    <span class="product-tag tag-offer">Oferta</span>
-                </div>
-                <div class="product-details">
-                    <h3 class="product-title">Oferta McAfee y Canva</h3>
-                    <p class="product-price">$7.500 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20la%20Oferta%20McAfee%20y%20Canva" class="buy-button">
-                        <i class="fab fa-whatsapp"></i>
-                        Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="streaming" data-price="3990" data-best-seller="false" data-description="YouTube Premium + YouTube Music: Experiencia completa sin interrupciones. Disfruta de todos los videos sin anuncios, reproducción en segundo plano y descarga offline. Incluye YouTube Music Premium con millones de canciones, playlists personalizadas y modo sin conexión. Cuenta personal con acceso garantizado por 1 mes.">
-                <div class="product-image" style="background-image: url('images/youtubepremium.jpg');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">YouTube Premium + YouTube Music 1 mes</h3>
-                    <p class="product-price">$3.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20YouTube%20Premium%20y%20YouTube%20Music%20por%201%20mes" class="buy-button">
-                        <i class="fab fa-whatsapp"></i>
-                        Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="redes" data-price="9990" data-best-seller="false" data-description="Potencia tu canal de Twitch con 1.000 seguidores orgánicos. Seguidores de calidad con cuentas verificadas y activas en la plataforma. Incrementa tu visibilidad y alcanza el estatus de afiliado más rápido. Incluye garantía de reposición y entrega gradual en 24-48 horas para mantener la seguridad de tu cuenta.">
-                <div class="product-image" style="background-image: url('images/seguidorestwitch.jpg');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">1000 Seguidores de Twitch</h3>
-                    <p class="product-price">$9.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%201000%20Seguidores%20de%20Twitch" class="buy-button">
-                        <i class="fab fa-whatsapp"></i>
-                        Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="musica" data-price="4990" data-best-seller="false" data-description="Disfruta de la mejor experiencia musical con Spotify Premium por 3 meses. Acceso completo a más de 82 millones de canciones en calidad premium (320kbps), sin anuncios ni interrupciones. Incluye modo offline para descargar tu música favorita, reproducción aleatoria ilimitada y saltos de canciones sin restricciones. Cuenta personal con credenciales únicas y soporte durante todo el período.">
-                <div class="product-image" style="background-image: url('images/spotify.png');"></div>
-                <div class="product-details">
-                    <h3 class="product-title">Spotify Premium - 3 meses</h3>
-                    <p class="product-price">$4.990 CLP</p>
-                    <a href="https://wa.me/56982195919?text=Hola,%20estoy%20interesado%20en%20Spotify%20Premium%20por%203%20meses" class="buy-button">
-                        <i class="fab fa-whatsapp"></i>
-                        Comprar por WhatsApp
-                    </a>
-                </div>
-            </div>
-
-            <!-- Continuar con el resto de los productos... -->
-            <!-- Agregar aquí el resto de los productos que faltan -->
-        </div>
-
-        <!-- Modal -->
-        <div id="product-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 id="modal-title"></h2>
-                <p id="modal-description"></p>
-            </div>
-        </div>
+        </section>
     </main>
 
-    <footer id="contact">
-        <p>Gracias por confiar en nosotros para todas tus necesidades digitales.</p>
-        <p>&copy; 2024 <strong>TrustZone Store</strong>. Todos los derechos reservados.</p>
-        <p>Diseñado por <a href="https://creawebchile.cl/" class="creaweb-link" target="_blank">CreaWeb Chile</a></p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="payment-icons">
+                <img src="icons/Mastercard.png" alt="Mastercard" class="payment-icon">
+                <img src="icons/Mercadopago.png" alt="Mercado Pago" class="payment-icon">
+                <img src="icons/Paypal.png" alt="PayPal" class="payment-icon">
+                <img src="icons/visa.png" alt="Visa" class="payment-icon">
+            </div>
+            <p>&copy; 2024 TrustZone Store. Todos los derechos reservados.</p>
+            <p class="credits">Sitio web creado por <a href="https://creawebchile.cl" target="_blank" rel="noopener">creawebchile.cl</a></p>
+        </div>
     </footer>
 
-    <div class="floating-elements-bottom">
-        <i class="floating-icon fas fa-hat-santa"></i>
-        <i class="floating-icon fas fa-deer"></i>
-        <i class="floating-icon fas fa-bells"></i>
-        <i class="floating-icon fas fa-candy-cane"></i>
-    </div>
-
-    <!-- Agregar el nuevo contenedor de compartir -->
-    <div class="share-container">
-        <div class="share-trigger" onclick="toggleShare()">
-            <i class="fas fa-share-alt fa-lg"></i>
-        </div>
-        <div class="share-buttons" id="shareButtons">
-            <a href="#" onclick="copyLink()" class="share-button copy-link">
-                <i class="fas fa-link"></i>
-                <span>Copiar Link</span>
-            </a>
-            <a href="#" onclick="shareWhatsApp()" class="share-button share-whatsapp">
-                <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp</span>
-            </a>
-            <a href="#" onclick="shareFacebook()" class="share-button share-facebook">
-                <i class="fab fa-facebook-f"></i>
-                <span>Facebook</span>
-            </a>
-            <a href="#" onclick="shareInstagram()" class="share-button share-instagram">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
-            <a href="#" onclick="shareTwitter()" class="share-button share-twitter">
-                <i class="fab fa-twitter"></i>
-                <span>Twitter</span>
-            </a>
-            <a href="#" onclick="shareTelegram()" class="share-button share-telegram">
-                <i class="fab fa-telegram-plane"></i>
-                <span>Telegram</span>
-            </a>
-            <a href="#" onclick="shareEmail()" class="share-button share-email">
-                <i class="fas fa-envelope"></i>
-                <span>Email</span>
-            </a>
-        </div>
-    </div>
-
-    <div id="toastNotification" class="toast-notification"></div>
-
-    <!-- Mantener todos los scripts originales y agregar las nuevas funciones de compartir -->
-    <script>
-        // ... código original de filtrado y modal ...
-
-        // Funciones de compartir
-        function toggleShare() {
-            const shareButtons = document.getElementById('shareButtons');
-            shareButtons.classList.toggle('active');
-        }
-
-        function copyLink() {
-            const url = window.location.href;
-            navigator.clipboard.writeText(url).then(() => {
-                showToast('¡Link copiado al portapapeles!');
-                const copyButton = document.querySelector('.copy-link');
-                copyButton.classList.add('copied');
-                setTimeout(() => {
-                    copyButton.classList.remove('copied');
-                }, 2000);
-            }).catch(err => {
-                showToast('Error al copiar el link');
-            });
-            return false;
-        }
-
-        function shareWhatsApp() {
-            const text = "¡Mira los mejores productos digitales en TrustZone Store!";
-            const url = window.location.href;
-            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
-        }
-
-        function shareFacebook() {
-            const url = window.location.href;
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
-        }
-
-        function shareInstagram() {
-            window.open('instagram://camera', '_blank');
-        }
-
-        function shareTwitter() {
-            const text = "¡Descubre los mejores productos digitales en TrustZone Store!";
-            const url = window.location.href;
-            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
-        }
-
-        function shareTelegram() {
-            const text = "¡Mira los mejores productos digitales en TrustZone Store!";
-            const url = window.location.href;
-            window.open(`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank');
-        }
-
-        function shareEmail() {
-            const subject = "¡Mira TrustZone Store!";
-            const body = "He encontrado esta increíble tienda de productos digitales: " + window.location.href;
-            window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        }
-
-        function showToast(message) {
-            const toast = document.getElementById('toastNotification');
-            toast.textContent = message;
-            toast.style.display = 'block';
-            
-            setTimeout(() => {
-                toast.style.display = 'none';
-            }, 2000);
-        }
-
-        // Cerrar el menú al hacer clic fuera
-        document.addEventListener('click', function(event) {
-            const shareContainer = document.querySelector('.share-container');
-            const shareButtons = document.getElementById('shareButtons');
-            if (!shareContainer.contains(event.target) && shareButtons.classList.contains('active')) {
-                shareButtons.classList.remove('active');
-            }
-        });
-
-        document.querySelector('.share-buttons').addEventListener('click', function(event) {
-            event.stopPropagation();
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const searchInput = document.getElementById('search');
-            const categoryFilter = document.getElementById('filter-category');
-            const priceFilter = document.getElementById('filter-price');
-            const bestSellerFilter = document.getElementById('filter-best-sellers');
-            const productGrid = document.getElementById('product-grid');
-            const products = Array.from(document.querySelectorAll('.product-card'));
-            const modal = document.getElementById('product-modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalDescription = document.getElementById('modal-description');
-            const closeModal = document.querySelector('.close');
-
-            function filterProducts() {
-                const searchText = searchInput.value.toLowerCase();
-                const category = categoryFilter.value.toLowerCase();
-                const price = priceFilter.value;
-                const bestSeller = bestSellerFilter.value;
-
-                products.forEach(product => {
-                    const productCategories = product.dataset.category.toLowerCase().split(',');
-                    const productPrice = parseInt(product.dataset.price);
-                    
-                    let matchesSearch = product.querySelector('.product-title').textContent.toLowerCase().includes(searchText);
-                    let matchesCategory = category === '' || productCategories.includes(category);
-                    let matchesPrice = true;
-                    
-                    if (price === 'low') {
-                        matchesPrice = productPrice <= 5000;
-                    } else if (price === 'high') {
-                        matchesPrice = productPrice > 5000;
-                    }
-                    
-                    let matchesBestSeller = bestSeller === '' || 
-                        (bestSeller === 'best' && product.dataset.bestSeller === 'true');
-
-                    if (matchesSearch && matchesCategory && matchesPrice && matchesBestSeller) {
-                        product.style.display = '';
-                    } else {
-                        product.style.display = 'none';
-                    }
-                });
-            }
-
-            // Event listeners para filtros
-            searchInput.addEventListener('input', filterProducts);
-            categoryFilter.addEventListener('change', filterProducts);
-            priceFilter.addEventListener('change', filterProducts);
-            bestSellerFilter.addEventListener('change', filterProducts);
-
-            // Modal functionality
-            productGrid.addEventListener('click', function(e) {
-                const card = e.target.closest('.product-card');
-                if (card && 
-                    !e.target.classList.contains('buy-button') && 
-                    !e.target.closest('.buy-button') && 
-                    !e.target.closest('.payment-button') && 
-                    !e.target.closest('script')) {
-                    modalTitle.textContent = card.querySelector('.product-title').textContent;
-                    modalDescription.textContent = card.dataset.description;
-                    modal.style.display = 'block';
-                }
-            });
-
-            closeModal.addEventListener('click', function() {
-                modal.style.display = 'none';
-            });
-
-            window.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-        });
-
-        // Función para cargar las tasas de cambio desde la API
-        async function loadExchangeRates() {
-            try {
-                const response = await fetch('https://v6.exchangerate-api.com/v6/39571eeb2758bed148fa6bf3/latest/CLP');
-                const data = await response.json();
-                return data.conversion_rates;
-            } catch (error) {
-                console.error('Error al cargar las tasas de cambio:', error);
-                // Tasas de respaldo en caso de error
-                return {
-                    CLP: 1,
-                    USD: 0.001,
-                    EUR: 0.00093,
-                    GBP: 0.00079,
-                    ARS: 0.83,
-                    MXN: 0.017
-                };
-            }
-        }
-
-        // Símbolos de moneda
-        const currencySymbols = {
-            CLP: '$',
-            USD: 'US$',
-            EUR: '€',
-            GBP: '£',
-            ARS: 'ARS$',
-            MXN: 'MX$'
-        };
-
-        // Función para dar formato al precio
-        function formatPrice(price, currency) {
-            const formatter = new Intl.NumberFormat('es-CL', {
-                minimumFractionDigits: currency === 'CLP' ? 0 : 2,
-                maximumFractionDigits: currency === 'CLP' ? 0 : 2,
-                useGrouping: true
-            });
-            return `${currencySymbols[currency]}${formatter.format(price)}`;
-        }
-
-        // Función para actualizar los precios
-        async function updatePrices() {
-            const selectedCurrency = document.getElementById('currency-selector').value;
-            const rates = await loadExchangeRates();
-            const products = document.querySelectorAll('.product-card');
-            
-            products.forEach(product => {
-                const priceElement = product.querySelector('.product-price');
-                const originalPrice = parseInt(product.dataset.price);
-                const rate = rates[selectedCurrency];
-                const convertedPrice = originalPrice * rate;
-                priceElement.textContent = formatPrice(convertedPrice, selectedCurrency);
-            });
-        }
-
-        // Cargar tasas iniciales y agregar event listener
-        document.addEventListener('DOMContentLoaded', async function() {
-            await updatePrices();
-            document.getElementById('currency-selector').addEventListener('change', updatePrices);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

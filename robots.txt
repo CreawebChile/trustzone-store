@@ -6,3 +6,9 @@ Sitemap: https://trustzonestore.com/sitemap.xml
 Disallow: /assets/
 Disallow: /css/
 Disallow: /js/
+Disallow: /Canva-pro_link.html
+Disallow: /s.insta.html
+Disallow: /s.tiktok.html
+Disallow: /macro.html
+Disallow: /Mcafee_intrucciones.html
+Disallow: /Antirecoil.html

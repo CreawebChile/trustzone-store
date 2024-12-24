@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - TrustZone Store | FAQ</title>
+    <meta name="description" content="Encuentra respuestas a todas tus dudas sobre nuestros servicios, métodos de pago, tiempos de entrega y más en TrustZone Store.">
+    <meta name="keywords" content="FAQ, preguntas frecuentes, ayuda, soporte, métodos de pago, entrega, servicios digitales, TrustZone Store">
+    
+    <link rel="canonical" href="https://trustzonestore.com/FQ.html">
+    
+    <meta property="og:title" content="Preguntas Frecuentes - TrustZone Store">
+    <meta property="og:description" content="Resuelve tus dudas sobre nuestros servicios y productos. Información completa sobre pagos, entregas y soporte.">
+    <meta property="og:image" content="https://trustzonestore.com/logo/logotrustzonestore.svg">
+    <meta property="og:url" content="https://trustzonestore.com/FQ.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .faq-section {
+            padding: 6rem 2rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-title {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .accordion {
+            list-style: none;
+            padding: 0;
+        }
+
+        .accordion-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 1.25rem;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: #f8fafc;
+        }
+
+        .accordion-question {
+            font-size: 1.1rem;
+            color: #1a202c;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .accordion-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-icon::before,
+        .accordion-icon::after {
+            content: '';
+            position: absolute;
+            background: #2563eb;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-icon::before {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .accordion-icon::after {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .accordion-item.active .accordion-icon::before {
+            transform: translateX(-50%) rotate(90deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.25rem;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            padding-bottom: 1.25rem;
+        }
+
+        .accordion-answer {
+            color: #4b5563;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 5rem 1rem 2rem;
+            }
+
+            .faq-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .accordion-question {
+                font-size: 1rem;
+            }
+
+            .accordion-header {
+                padding: 1rem;
+            }
+        }
+
+        /* Prevent zoom on iOS */
+        input, select, textarea {
+            font-size: 16px !important;
+        }
+        
+        @supports (-webkit-touch-callout: none) {
+            /* CSS específico para dispositivos iOS */
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RLGHERD56W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RLGHERD56W');
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <object data="logo/logotrustzonestore.svg" type="image/svg+xml" width="350" height="auto" title="Logo de Trustzone Store">
+                <img src="logo/logotrustzonestore.svg" alt="Trustzone Store Logo" width="350" height="auto">
+            </object>
+        </div>
+        <button class="hamburger" aria-label="Menú principal" aria-controls="navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav" id="navigation" role="navigation">
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="FQ.html">Preguntas Frecuentes</a></li>
+                <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="faq-section">
+        <h1 class="faq-title">Preguntas Frecuentes</h1>
+        <ul class="accordion">
+            <li class="accordion-item">
+                <div class="accordion-header">
+                    <h2 class="accordion-question">¿Qué servicios ofrece TrustZone Store?</h2>
+                    <div class="accordion-icon"></div>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-answer">Ofrecemos una amplia gama de servicios digitales premium, incluyendo Canva Pro, YouTube Premium, Spotify Premium, software anti-recoil para gaming, películas, libros digitales, aplicaciones APK exclusivas, software profesional y antivirus confiables. Todos nuestros servicios están cuidadosamente seleccionados para garantizar la mejor calidad y experiencia de usuario.</p>
+                </div>
+            </li>
+            <li class="accordion-item">
+                <div class="accordion-header">
+                    <h2 class="accordion-question">¿Cómo puedo realizar un pago?</h2>
+                    <div class="accordion-icon"></div>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-answer">Ofrecemos múltiples métodos de pago seguros. Para transacciones nacionales, utilizamos Mercado Pago que acepta tarjetas de crédito, débito y transferencias bancarias. Para pagos internacionales, trabajamos con PayPal. Si prefieres asistencia personalizada, también puedes realizar tu pago a través de nuestro servicio de atención por WhatsApp.</p>
+                </div>
+            </li>
+            <li class="accordion-item">
+                <div class="accordion-header">
+                    <h2 class="accordion-question">¿Puedo contactar al equipo de soporte?</h2>
+                    <div class="accordion-icon"></div>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-answer">¡Por supuesto! Puedes contactarnos de varias formas: a través del formulario de contacto en nuestra página web, por WhatsApp para atención inmediata, o mediante nuestro correo electrónico de soporte. Nuestro equipo está disponible para ayudarte con cualquier consulta o problema que puedas tener.</p>
+                </div>
+            </li>
+            <li class="accordion-item">
+                <div class="accordion-header">
+                    <h2 class="accordion-question">¿Los servicios son seguros?</h2>
+                    <div class="accordion-icon"></div>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-answer">Sí, garantizamos la seguridad y calidad de todos nuestros servicios. Trabajamos únicamente con proveedores confiables y verificados, implementamos medidas de seguridad en todas nuestras transacciones, y ofrecemos soporte post-venta para asegurar tu satisfacción. Además, protegemos tu información personal siguiendo estrictos protocolos de privacidad.</p>
+                </div>
+            </li>
+            <li class="accordion-item">
+                <div class="accordion-header">
+                    <h2 class="accordion-question">¿Cómo funciona el botón "Comprar Ahora"?</h2>
+                    <div class="accordion-icon"></div>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-answer">Al hacer clic en "Comprar Ahora", serás dirigido a Mercado Pago, donde podrás realizar el pago del producto de manera segura. Una vez completada la transacción, serás redirigido automáticamente a nuestra página, donde encontrarás los detalles de tu compra y podrás comenzar a disfrutar del servicio.
+
+                        Si la redirección automática no ocurre, haz clic en el botón "Volver al sitio" o "Inicio" en Mercado Pago para acceder a tu compra. En caso de que esto no funcione, toma una captura de pantalla de tu comprobante de pago y envíala al equipo de Ventas a través de la sección de contacto. Te responderemos a la brevedad.</p>
+                </div>
+            </li>
+            <li class="accordion-item">
+                <div class="accordion-header">
+                    <h2 class="accordion-question">¿Qué hago después de realizar el pago?</h2>
+                    <div class="accordion-icon"></div>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-answer">Después de completar el pago, serás redirigido automáticamente a nuestra página de confirmación, donde encontrarás todas las instrucciones y credenciales necesarias para acceder a tu servicio. Si la redirección automática no ocurre, no te preocupes, simplemente haz clic en el botón "Volver al sitio" o "Inicio" en Mercado Pago para acceder a tu compra.
+
+                        En caso de que esto no funcione, toma una captura de pantalla de tu comprobante de pago y envíala al equipo de Ventas a través de la sección de contacto. También recibirás un correo electrónico con los detalles de tu compra. Te responderemos a la brevedad para garantizar que disfrutes de tu servicio sin inconvenientes.</p>
+                </div>
+            </li>
+            <li class="accordion-item">
+                <div class="accordion-header">
+                    <h2 class="accordion-question">¿Cuánto tiempo tarda en activarse mi servicio?</h2>
+                    <div class="accordion-icon"></div>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-answer">La activación es inmediata una vez confirmado el pago. Al regresar a nuestra página web después del pago, encontrarás toda la información necesaria para comenzar a usar tu servicio. Si tienes algún problema con la activación, nuestro equipo de soporte está disponible para ayudarte a través de WhatsApp o el formulario de contacto.</p>
+                </div>
+            </li>
+            <li class="accordion-item">
+                <div class="accordion-header">
+                    <h2 class="accordion-question">¿Cómo funciona la compra por WhatsApp?</h2>
+                    <div class="accordion-icon"></div>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-answer">Al elegir la opción de compra por WhatsApp, serás redirigido automáticamente a una conversación con nuestro equipo de ventas. Allí podrás:
+                    <br><br>
+                    1. Consultar sobre el producto o servicio que te interesa
+                    <br>
+                    2. Recibir atención personalizada de nuestro equipo
+                    <br>
+                    3. Coordinar el método de pago de tu preferencia
+                    <br>
+                    4. Una vez confirmado el pago, recibirás inmediatamente las credenciales o accesos necesarios para tu servicio
+                    <br>
+                    5. Contarás con soporte post-venta directo para cualquier consulta adicional
+                    </p>
+                </div>
+            </li>
+            <li class="accordion-item">
+                <div class="accordion-header">
+                    <h2 class="accordion-question">¿Cómo funciona la compra de seguidores?</h2>
+                    <div class="accordion-icon"></div>
+                </div>
+                <div class="accordion-content">
+                    <p class="accordion-answer">El proceso de compra de seguidores funciona de la siguiente manera:
+                    <br><br>
+                    1. Realiza el pago a través de Mercado Pago
+                    <br>
+                    2. Al completar el pago, serás redirigido automáticamente a un formulario
+                    <br>
+                    3. En el formulario, deberás proporcionar:
+                        - Tu correo electrónico
+                        - El link de tu perfil
+                        - Seguir las instrucciones adicionales indicadas
+                    <br>
+                    4. Envía la solicitud y espera un correo de confirmación
+                    <br>
+                    5. Un miembro de nuestro equipo procesará tu solicitud y te enviará un correo confirmando que los seguidores han sido enviados o están en proceso
+                    <br><br>
+                    Importante: Si después del pago no eres redirigido al formulario automáticamente, debes contactar a nuestro equipo de ventas a través de la sección de contacto en la página web. Asegúrate de incluir una captura de pantalla de tu comprobante de pago para que podamos procesar tu pedido.</p>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="payment-icons">
+                <img src="icons/Mastercard.png" alt="Mastercard" class="payment-icon">
+                <img src="icons/Mercadopago.png" alt="Mercado Pago" class="payment-icon">
+                <img src="icons/Paypal.png" alt="PayPal" class="payment-icon">
+                <img src="icons/visa.png" alt="Visa" class="payment-icon">
+            </div>
+            <p>&copy; 2024 TrustZone Store. Todos los derechos reservados.</p>
+            <p class="credits">Sitio web creado por <a href="https://creawebchile.cl" target="_blank" rel="noopener">creawebchile.cl</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionItems = document.querySelectorAll('.accordion-item');
+
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                header.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all items
+                    accordionItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                    });
+
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

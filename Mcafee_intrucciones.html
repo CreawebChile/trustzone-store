@@ -33,74 +33,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .navbar .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            text-decoration: none;
-            color: #fff;
-        }
-
-        .navbar .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        .navbar nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .navbar nav ul li a:hover {
-            color: #ff9800;
-        }
-
-        .menu-icon {
-            display: none;
-            font-size: 1.8em;
-            cursor: pointer;
-            color: #fff;
-        }
-
         .mcafee-card {
             background: white;
             border-radius: 8px;
@@ -273,100 +207,37 @@
             text-decoration: underline;
         }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: auto;
-        }
-
-        .footer-contact {
-            margin-top: 10px;
-            font-size: 1.1rem;
-        }
-
-        .footer-contact a {
-            color: #ff9800;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-contact a:hover {
-            color: #e68900;
-        }
-
-        .footer-icons {
-            margin-top: 15px;
-        }
-
-        .footer-icons a {
-            color: #fff;
-            margin: 0 10px;
-            font-size: 1.8rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-icons a:hover {
-            color: #ff9800;
-        }
-
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
         main.instructions {
             margin-top: 100px;
+            padding: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
             flex: 1;
-        }
-
-        @media screen and (max-width: 768px) {
-            .navbar nav ul {
-                display: none;
-                flex-direction: column;
-                gap: 10px;
-                background-color: #333;
-                position: absolute;
-                top: 60px;
-                right: 10px;
-                width: calc(100% - 20px);
-                max-width: 300px;
-                padding: 15px;
-                border-radius: 5px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-
-            .navbar nav.active ul {
-                display: flex;
-            }
-
-            .menu-icon {
-                display: block;
-                margin-right: 10px;
-            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <a href="#" class="logo">
-                <img src="images/Logotipo Tecnología Azul (2).png" alt="Logo de TrustZone">
-                TrustZone Store
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html#home">Inicio</a></li>
-                    <li><a href="index.html#about">Sobre Nosotros</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="index.html#contact">Contacto</a></li>
-                    <li><a href="Terminos-y-condiciones.html">Términos y Condiciones</a></li>
-                </ul>
-            </nav>
-            <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <header class="header">
+        <div class="logo">
+            <object data="logo/logotrustzonestore.svg" type="image/svg+xml" width="350" height="auto" title="TrustZone Store Logo">
+                <img src="logo/logotrustzonestore.svg" alt="Trustzone Store Logo" width="350" height="auto">
+            </object>
         </div>
+        <button class="hamburger" aria-label="Menú principal" aria-controls="navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav" id="navigation" role="navigation">
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="FQ.html">Preguntas Frecuentes</a></li>
+                <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="instructions">
@@ -411,58 +282,54 @@
         </div>
 
         <div class="support-text">
-            <p>Si tienes algún problema, <a href="#soporte">contacta con nuestro soporte técnico aquí</a>.</p>
+            <p>Si tienes algún problema, <a href="contacto.html">contacta con nuestro soporte técnico aquí</a>.</p>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2023 TrustZone Store. Todos los derechos reservados.</p>
-        <p>Diseñado por <a href="https://creawebchile.cl/" class="creaweb-link" target="_blank">CreaWeb Chile</a></p>
-        <div class="footer-contact">
-            <p>📞 Contáctanos vía WhatsApp: <a href="https://wa.me/56982195919" target="_blank">+56 9 8219 5919</a></p>
-            <p>📸 Síguenos en Instagram: <a href="https://www.instagram.com/trustzone_store" target="_blank">@trustzone_store</a></p>
-        </div>
-        <div class="footer-icons">
-            <a href="https://wa.me/56982195919" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/trustzone_store" target="_blank"><i class="fab fa-instagram"></i></a>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="payment-icons">
+                <img src="icons/Mastercard.png" alt="Mastercard" class="payment-icon">
+                <img src="icons/Mercadopago.png" alt="Mercado Pago" class="payment-icon">
+                <img src="icons/Paypal.png" alt="PayPal" class="payment-icon">
+                <img src="icons/visa.png" alt="Visa" class="payment-icon">
+            </div>
+            <p>&copy; 2024 TrustZone Store. Todos los derechos reservados.</p>
+            <p class="credits">Sitio web creado por <a href="https://creawebchile.cl" target="_blank" rel="noopener">creawebchile.cl</a></p>
         </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
-    document.getElementById('toggleCode').addEventListener('click', function() {
-        const codeElement = document.getElementById('activation-code');
-        const button = this;
-        
-        if (codeElement.classList.contains('hidden-code')) {
-            codeElement.classList.remove('hidden-code');
-            codeElement.classList.add('show-code');
-            button.innerHTML = '<i class="fas fa-eye-slash"></i> Ocultar Código';
-        } else {
-            codeElement.classList.remove('show-code');
-            codeElement.classList.add('hidden-code');
-            button.innerHTML = '<i class="fas fa-eye"></i> Mostrar Código';
-        }
-    });
-
-    document.getElementById('copyCode').addEventListener('click', function() {
-        const codeElement = document.getElementById('activation-code');
-        const code = codeElement.textContent;
-        
-        navigator.clipboard.writeText(code).then(() => {
-            this.classList.add('copied');
-            this.innerHTML = '<i class="fas fa-check"></i>';
+        document.getElementById('toggleCode').addEventListener('click', function() {
+            const codeElement = document.getElementById('activation-code');
+            const button = this;
             
-            setTimeout(() => {
-                this.classList.remove('copied');
-                this.innerHTML = '<i class="fas fa-copy"></i>';
-            }, 2000);
+            if (codeElement.classList.contains('hidden-code')) {
+                codeElement.classList.remove('hidden-code');
+                codeElement.classList.add('show-code');
+                button.innerHTML = '<i class="fas fa-eye-slash"></i> Ocultar Código';
+            } else {
+                codeElement.classList.remove('show-code');
+                codeElement.classList.add('hidden-code');
+                button.innerHTML = '<i class="fas fa-eye"></i> Mostrar Código';
+            }
         });
-    });
 
-    function toggleMenu() {
-        const nav = document.querySelector('nav');
-        nav.classList.toggle('active');
-    }
+        document.getElementById('copyCode').addEventListener('click', function() {
+            const codeElement = document.getElementById('activation-code');
+            const code = codeElement.textContent;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                this.classList.add('copied');
+                this.innerHTML = '<i class="fas fa-check"></i>';
+                
+                setTimeout(() => {
+                    this.classList.remove('copied');
+                    this.innerHTML = '<i class="fas fa-copy"></i>';
+                }, 2000);
+            });
+        });
     </script>
 </body>
 </html>
