@@ -32,6 +32,35 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .christmas-button {
+            display: inline-block;
+            background: #d42426;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .christmas-button:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content .cta-button,
+            .hero-content .christmas-button {
+                display: block;
+                margin: 1rem auto;
+                max-width: 280px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="popup" class="popup">
@@ -78,6 +107,7 @@
             <h1>Bienvenido a TrustZone Store</h1>
             <p>Descubre todo lo que tenemos para ofrecerte</p>
             <a href="productos.html" class="cta-button">Explorar Productos</a>
+            <a href="navidad/navidad.html" class="christmas-button">¿Cuándo llega Santa? 🎅</a>
         </div>
     </section>
 
