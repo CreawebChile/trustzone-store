@@ -297,6 +297,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             ];
 
+            // Add after the products array
+            const validCoupons = {
+                'WELCOME20': { discount: 0.20, products: ['all'] }  // Cambiado de WELCOME10 a WELCOME20
+            };
+
+            // Agregar después de la declaración de validCoupons
+            const USED_COUPONS_KEY = 'usedCoupons';
+
+            // Función para verificar si un cupón ya fue usado
+            function isCouponUsed(couponCode, productTitle) {
+                const usedCoupons = JSON.parse(localStorage.getItem(USED_COUPONS_KEY) || '{}');
+                return usedCoupons[couponCode]?.includes(productTitle) || false;
+            }
+
+            // Función para marcar un cupón como usado
+            function markCouponAsUsed(couponCode, productTitle) {
+                const usedCoupons = JSON.parse(localStorage.getItem(USED_COUPONS_KEY) || '{}');
+                if (!usedCoupons[couponCode]) {
+                    usedCoupons[couponCode] = [];
+                }
+                if (!usedCoupons[couponCode].includes(productTitle)) {
+                    usedCoupons[couponCode].push(productTitle);
+                }
+                localStorage.setItem(USED_COUPONS_KEY, JSON.stringify(usedCoupons));
+            }
+
             // Initialize products view
             const productsGrid = document.getElementById('productsGrid');
             const productDetail = document.getElementById('productDetail');
@@ -356,6 +382,18 @@ document.addEventListener('DOMContentLoaded', () => {
                        </div>`
                     : '';
 
+                // Add coupon section if product has direct purchase link
+                const couponSection = directPurchaseLinks[product.title] ? `
+                    <div class="coupon-section">
+                        <div class="coupon-input-group">
+                            <input type="text" class="coupon-input" placeholder="Ingresa tu código de descuento" 
+                                aria-label="Código de descuento">
+                            <button class="apply-coupon-btn">Aplicar</button>
+                        </div>
+                        <div class="coupon-message"></div>
+                    </div>
+                ` : '';
+
                 // Determine which button to show
                 const purchaseButton = directPurchaseLinks[product.title] 
                     ? `<a href="${directPurchaseLinks[product.title]}" class="buy-button" target="_blank" rel="noopener">Comprar Ahora</a>`
@@ -368,16 +406,94 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${product.image}" alt="${product.title}">
                     <div class="detail-info">
                         <h2>${product.title}</h2>
-                        <p class="price">${product.price}</p>
+                        <div class="price-container">
+                            <span class="current-price">${product.price}</span>
+                        </div>
+                        ${couponSection}
                         ${standardNote}
                         ${followerNote}
                         <p class="description">${product.fullDescription}</p>
                         <ul class="features">
                             ${product.features.map(feature => `<li>${feature}</li>`).join('')}
                         </ul>
-                        ${purchaseButton}
+                        <a href="${directPurchaseLinks[product.title] || '#'}" 
+                           class="${directPurchaseLinks[product.title] ? 'buy-button' : 'whatsapp-button'}" 
+                           target="_blank" rel="noopener"
+                           data-original-link="${directPurchaseLinks[product.title] || ''}"
+                           ${!directPurchaseLinks[product.title] ? 
+                               `onclick="window.open('https://wa.me/56982195919?text=${encodeURIComponent(`Hola, estoy interesado en ${product.title}`)}', '_blank')"` 
+                               : ''}>
+                            ${directPurchaseLinks[product.title] ? 'Comprar Ahora' : 'Comprar por WhatsApp'}
+                        </a>
                     </div>
                 `;
+
+                // Add coupon functionality if product has direct purchase link
+                if (directPurchaseLinks[product.title]) {
+                    const couponInput = detailContent.querySelector('.coupon-input');
+                    const applyButton = detailContent.querySelector('.apply-coupon-btn');
+                    const messageDiv = detailContent.querySelector('.coupon-message');
+                    const buyButton = detailContent.querySelector('.buy-button');
+                    const priceContainer = detailContent.querySelector('.price-container');
+                    const currentPrice = parseFloat(product.price.replace('$', '').replace('.', ''));
+
+                    // Agregar listener al botón de compra para marcar el cupón como usado
+                    buyButton.addEventListener('click', (e) => {
+                        const appliedCoupon = buyButton.dataset.appliedCoupon;
+                        if (appliedCoupon) {
+                            markCouponAsUsed(appliedCoupon, product.title);
+                        }
+                    });
+
+                    applyButton.addEventListener('click', () => {
+                        const couponCode = couponInput.value.trim().toUpperCase();
+                        const coupon = validCoupons[couponCode];
+
+                        // Verificar si el cupón ya fue usado
+                        if (isCouponUsed(couponCode, product.title)) {
+                            messageDiv.className = 'coupon-message error';
+                            messageDiv.textContent = 'Este cupón ya ha sido utilizado para este producto';
+                            return;
+                        }
+
+                        if (coupon && (coupon.products.includes('all') || coupon.products.includes(product.title))) {
+                            const discountedPrice = currentPrice * (1 - coupon.discount);
+                            
+                            priceContainer.innerHTML = `
+                                <span class="original-price">${product.price}</span>
+                                <span class="discounted-price">$${Math.round(discountedPrice).toLocaleString('es-CL')}</span>
+                            `;
+                            
+                            messageDiv.className = 'coupon-message success';
+                            messageDiv.textContent = `¡Cupón aplicado! ${coupon.discount * 100}% de descuento`;
+                            
+                            // Update buy button with specific link for products with discount
+                            if (product.title === "Canva Pro - 1 Año") {
+                                buyButton.href = 'https://mpago.la/2tmSArZ';
+                            } else if (product.title === "McAfee AntiVirus (2024) - 1 Año") {
+                                buyButton.href = 'https://mpago.la/1oVFtiz';
+                            } else if (product.title === "Anti Recoil para Mouse") {
+                                buyButton.href = 'https://mpago.la/2NJtEZN';
+                            } else if (product.title === "Macro para Mouse") {
+                                buyButton.href = 'https://mpago.la/2BbxvD2';
+                            } else if (product.title === "1000 Seguidores TikTok") {
+                                buyButton.href = 'https://mpago.la/1A4GUms';
+                            } else if (product.title === "1000 Seguidores Instagram") {
+                                buyButton.href = 'https://mpago.la/1EK4CmX';
+                            } else {
+                                buyButton.href = '----------';
+                            }
+                            buyButton.dataset.appliedCoupon = couponCode;
+                            
+                            // Disable input and button after successful application
+                            couponInput.disabled = true;
+                            applyButton.disabled = true;
+                        } else {
+                            messageDiv.className = 'coupon-message error';
+                            messageDiv.textContent = 'Cupón inválido o no aplicable a este producto';
+                        }
+                    });
+                }
 
                 productsGrid.style.display = 'none';
                 productDetail.style.display = 'block';
