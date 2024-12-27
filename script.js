@@ -359,7 +359,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Anti Recoil para Mouse': 'https://mpago.la/21qbKiA',
                     'McAfee AntiVirus (2024) - 1 Año': 'https://mpago.la/2WnW5zR',
                     '1000 Seguidores TikTok': 'https://mpago.la/1A6X2dP',
-                    '1000 Seguidores Instagram': 'https://mpago.la/1zWWhUv'
+                    '1000 Seguidores Instagram': 'https://mpago.la/1zWWhUv',
+                    'YouTube Premium - 1 Mes': 'https://mpago.la/1tN5xVX'  // Agregar este link
                 };
 
                 // Check if product is a follower product
@@ -480,6 +481,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 buyButton.href = 'https://mpago.la/1A4GUms';
                             } else if (product.title === "1000 Seguidores Instagram") {
                                 buyButton.href = 'https://mpago.la/1EK4CmX';
+                            } else if (product.title === "YouTube Premium - 1 Mes") {
+                                buyButton.href = 'https://mpago.la/1EQxwzc';  // Actualizado al nuevo enlace con descuento
                             } else {
                                 buyButton.href = '----------';
                             }

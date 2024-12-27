@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RLGHERD56W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RLGHERD56W');
+    </script>
+    <meta name="google-adsense-account" content="ca-pub-1273212656995497">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TrustZone Store - Descarga tu NemytPremium">
+    <title>TrustZone Store - NemytPremium</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos de la página */
+        .container {
+            max-width: 800px;
+            margin: 120px auto 0;
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .download-section {
+            position: relative;
+            margin: 40px 0;
+            padding: 20px;
+        }
+
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 50px;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        /* ...existing styles from Antirecoil.html... */
+        
+        /* Estilos para el formulario de confirmación */
+        .payment-confirmation {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+
+        .payment-confirmation h2 {
+            color: #2563eb;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .form-group input:read-only {
+            background-color: #f3f4f6;
+        }
+
+        .submit-button {
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: #1d4ed8;
+        }
+
+        .contact-info {
+            background: #f0f9ff;
+            border-left: 4px solid #2563eb;
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+            color: #374151;
+        }
+
+        .contact-info strong {
+            color: #2563eb;
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+        }
+
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .file-upload input[type=file] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+
+        .file-upload-label {
+            display: inline-block;
+            padding: 0.75rem 1rem;
+            background: #f3f4f6;
+            border: 2px dashed #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-label:hover {
+            border-color: #2563eb;
+            background: #f0f9ff;
+        }
+
+        #fileNameDisplay {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .steps-list {
+            list-style-position: inside;
+            padding: 1rem 0;
+            text-align: left;
+            margin: 1rem 0;
+        }
+
+        .steps-list li {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 6px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            background: #f0f9ff;
+            border-left: 4px solid #2563eb;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .benefits-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .benefit-item i {
+            font-size: 2.5rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-item p {
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            .steps-list li {
+                font-size: 1rem;
+            }
+
+            .whatsapp-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .payment-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #2563eb;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .payment-button:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .button-group {
+                padding: 0 1rem;
+            }
+            
+            .payment-button,
+            .whatsapp-button {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <object data="logo/logotrustzonestore.svg" type="image/svg+xml" width="350" height="auto" title="TrustZone Store Logo">
+                <img src="logo/logotrustzonestore.svg" alt="Trustzone Store Logo" width="350" height="auto">
+            </object>
+        </div>
+        <button class="hamburger" aria-label="Menú principal" aria-controls="navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav" id="navigation" role="navigation">
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="FQ.html">Preguntas Frecuentes</a></li>
+                <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-title">
+            <h1>¡Gracias por tu Compra!</h1>
+        </div>
+
+        <div class="contact-info">
+            <p><strong>¡Un paso más!</strong></p>
+            <p>Para activar tu YouTube Premium:</p>
+            <ol class="steps-list">
+                <li>Haz clic en el botón de WhatsApp a continuación</li>
+                <li>Envía el comprobante de tu pago</li>
+                <li>Un asesor activará tu cuenta inmediatamente</li>
+            </ol>
+            <div class="button-group">
+                <a href="https://wa.me/56982195919" 
+                   class="whatsapp-button" 
+                   id="whatsappButton"
+                   target="_blank" 
+                   rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    Contactar para Activación
+                </a>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h2>Beneficios de YouTube Premium</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-ban"></i>
+                    <h3>Sin anuncios</h3>
+                    <p>Disfruta de videos sin interrupciones publicitarias</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-music"></i>
+                    <h3>YouTube Music</h3>
+                    <p>Acceso completo a YouTube Music Premium</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-download"></i>
+                    <h3>Descarga contenido</h3>
+                    <p>Guarda videos para ver sin conexión</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Reproducción en segundo plano</h3>
+                    <p>Sigue escuchando con la pantalla bloqueada</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="payment-icons">
+                <img src="icons/Mastercard.png" alt="Mastercard" class="payment-icon">
+                <img src="icons/Mercadopago.png" alt="Mercado Pago" class="payment-icon">
+                <img src="icons/Paypal.png" alt="PayPal" class="payment-icon">
+                <img src="icons/visa.png" alt="Visa" class="payment-icon">
+            </div>
+            <p>&copy; 2024 TrustZone Store. Todos los derechos reservados.</p>
+            <p class="credits">Sitio web creado por <a href="https://creawebchile.cl" target="_blank" rel="noopener">creawebchile.cl</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleInstructions() {
+            const instructions = document.getElementById('detailed-instructions');
+            if (instructions.style.display === 'none') {
+                instructions.style.display = 'block';
+                window.scrollTo({
+                    top: instructions.offsetTop,
+                    behavior: 'smooth'
+                });
+            } else {
+                instructions.style.display = 'none';
+            }
+        }
+
+        // Mostrar nombre del archivo seleccionado
+        document.getElementById('fileUpload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0]?.name || 'Ningún archivo seleccionado';
+            document.getElementById('fileNameDisplay').textContent = fileName;
+        });
+
+        // Manejar envío del formulario
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const fullName = document.getElementById('fullName').value;
+            const file = document.getElementById('fileUpload').files[0];
+
+            // Aquí puedes agregar la lógica para enviar los datos
+            // Por ahora, mostraremos un mensaje y redirigiremos a WhatsApp
+            alert('¡Gracias por tu confirmación! Te redirigiremos a WhatsApp para completar el proceso.');
+            
+            const message = `Hola, soy ${fullName}. He realizado el pago para YouTube Premium - 1 mes. Código: BUY#4072`;
+            window.location.href = `https://wa.me/56982195919?text=${encodeURIComponent(message)}`;
+        }
+
+        // Obtener el código de la URL de manera segura
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            const whatsappButton = document.getElementById('whatsappButton');
+            
+            if (code) {
+                // Modificar el enlace de WhatsApp para incluir el código solo si existe
+                const message = `Hola, acabo de realizar el pago para YouTube Premium. Mi código de compra es: ${code}`;
+                whatsappButton.href = `https://wa.me/56982195919?text=${encodeURIComponent(message)}`;
+            }
+        });
+    </script>
+</body>
+</html>
