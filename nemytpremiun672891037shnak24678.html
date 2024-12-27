@@ -432,52 +432,11 @@
 
     <script src="script.js"></script>
     <script>
-        function toggleInstructions() {
-            const instructions = document.getElementById('detailed-instructions');
-            if (instructions.style.display === 'none') {
-                instructions.style.display = 'block';
-                window.scrollTo({
-                    top: instructions.offsetTop,
-                    behavior: 'smooth'
-                });
-            } else {
-                instructions.style.display = 'none';
-            }
-        }
-
-        // Mostrar nombre del archivo seleccionado
-        document.getElementById('fileUpload').addEventListener('change', function(e) {
-            const fileName = e.target.files[0]?.name || 'Ningún archivo seleccionado';
-            document.getElementById('fileNameDisplay').textContent = fileName;
-        });
-
-        // Manejar envío del formulario
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const fullName = document.getElementById('fullName').value;
-            const file = document.getElementById('fileUpload').files[0];
-
-            // Aquí puedes agregar la lógica para enviar los datos
-            // Por ahora, mostraremos un mensaje y redirigiremos a WhatsApp
-            alert('¡Gracias por tu confirmación! Te redirigiremos a WhatsApp para completar el proceso.');
-            
-            const message = `Hola, soy ${fullName}. He realizado el pago para YouTube Premium - 1 mes. Código: BUY#4072`;
-            window.location.href = `https://wa.me/56982195919?text=${encodeURIComponent(message)}`;
-        }
-
-        // Obtener el código de la URL de manera segura
-        window.addEventListener('load', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const code = urlParams.get('code');
+        // Eliminar todo el código JavaScript anterior y reemplazarlo con esto:
+        window.addEventListener('DOMContentLoaded', function() {
             const whatsappButton = document.getElementById('whatsappButton');
-            
-            if (code) {
-                // Modificar el enlace de WhatsApp para incluir el código solo si existe
-                const message = `Hola, acabo de realizar el pago para YouTube Premium. Mi código de compra es: ${code}`;
-                whatsappButton.href = `https://wa.me/56982195919?text=${encodeURIComponent(message)}`;
-            }
+            const defaultMessage = "Hola, acabo de comprar YouTube Premium. Referencia: BUY#20. Adjunto el comprobante de pago para la activación.";
+            whatsappButton.href = `https://wa.me/56982195919?text=${encodeURIComponent(defaultMessage)}`;
         });
     </script>
 </body>
