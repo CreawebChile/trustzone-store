@@ -333,6 +333,135 @@
                 max-width: 280px;
             }
         }
+
+        /* Updated New Year Message Styles */
+        .new-year-message {
+            background: linear-gradient(45deg, #000428 0%, #004e92 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin: 120px auto 30px;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .new-year-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .new-year-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(120deg, #ffeb3b, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGlow 2s ease-in-out infinite;
+        }
+
+        .new-year-subtitle {
+            font-size: 1.4rem;
+            color: #e0e7ff;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: subtitlePulse 3s ease-in-out infinite;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #fff;
+            filter: blur(1px);
+            animation: sparkleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% {
+                filter: brightness(1) drop-shadow(0 0 10px rgba(255, 235, 59, 0.5));
+            }
+            50% {
+                filter: brightness(1.2) drop-shadow(0 0 20px rgba(255, 235, 59, 0.7));
+            }
+        }
+
+        @keyframes subtitlePulse {
+            0%, 100% {
+                opacity: 0.9;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes sparkleFloat {
+            0% {
+                transform: scale(0) rotate(0deg) translate(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1) rotate(180deg) translate(20px, -20px);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(0) rotate(360deg) translate(40px, -40px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .new-year-message {
+                margin: 90px 15px 30px;
+                padding: 2rem;
+            }
+
+            .new-year-title {
+                font-size: 2.5rem;
+            }
+
+            .new-year-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .new-year-message {
+                margin: 80px 10px 20px;
+                padding: 1.5rem;
+            }
+
+            .new-year-title {
+                font-size: 2rem;
+            }
+
+            .new-year-subtitle {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -358,14 +487,24 @@
         </nav>
     </header>
 
+    <!-- Updated New Year Message -->
+    <div class="new-year-message">
+        <div class="new-year-content">
+            <h2 class="new-year-title">¡Feliz Año 2025! 🎊</h2>
+            <p class="new-year-subtitle">
+                TrustZone Store te desea un año lleno de éxito y creatividad. 
+                ¡Gracias por confiar en nosotros! ✨<br>
+                Que este año tus diseños brillen con Canva Pro 🎨
+            </p>
+        </div>
+    </div>
+
     <main class="canva-content">
         <h1>Enlace Canva Pro</h1>
         
         <div class="canva-description">
-            <p>Obtén acceso instantáneo a Canva Pro uniéndote a nuestro equipo profesional utilizando el enlace a continuación.</p>
-            <p>Una vez que termine tu suscripción, vuelve aquí para unirte al grupo actualizado.</p>
-            <p>Asegúrate de tener acceso ininterrumpido revisando regularmente los enlaces actualizados.</p>
-            <p><strong>Este grupo de Canva VENCE EL 08/01/2025.</strong> A partir de esa fecha, revisa nuevamente este enlace.</p>
+            <p>Accede a Canva Pro con nuestro equipo mediante el enlace a continuación.</p>
+            <p><strong>Este grupo de Canva VENCE EL 08/01/2025.</strong> Revisa el enlace después de esa fecha.</p>
         </div>
 
         <div class="copy-link-section">
@@ -386,7 +525,7 @@
         </div>
 
         <div class="button-container">
-            <a href="https://www.canva.com/brand/join?token=waY2J8Zgs5N5EmnC4iAPUA&referrer=team-invite" 
+            <a href="https://www.canva.com/brand/join?token=IEFxs-ByHDm-uK-E4wFJWw&referrer=team-invite" 
                class="join-button" 
                target="_blank" 
                rel="noopener">
@@ -488,6 +627,18 @@
                     alert('No se pudo copiar el enlace. Por favor, inténtalo de nuevo.');
                 }
             });
+
+            // Create sparkles
+            const message = document.querySelector('.new-year-message');
+            for (let i = 0; i < 30; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = `${Math.random() * 100}%`;
+                sparkle.style.top = `${Math.random() * 100}%`;
+                sparkle.style.animationDelay = `${Math.random() * 3}s`;
+                sparkle.style.opacity = Math.random();
+                message.appendChild(sparkle);
+            }
         });
     </script>
 </body>
